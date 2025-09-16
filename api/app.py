@@ -1,4 +1,7 @@
+
 # app.py - VERSÃO FINAL E COMPLETA (Híbrida + Validação Total e Mensagens Claras)
+from sklearnex import patch_sklearn # <-- ADICIONE ESTA LINHA
+patch_sklearn()
 import joblib
 import pandas as pd
 import numpy as np
