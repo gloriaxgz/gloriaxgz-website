@@ -1325,28 +1325,50 @@ model.fit(
                     }
                 });
 
-                fetch('/api/predict', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-                .then(response => response.json())
+                const apiUrl = 'https://gloriaxgz-website.onrender.com/predict';
+
+                fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data) // 'data' é a variável com os dados do seu formulário
+                })
+                .then(response => {
+                    // Verifica se a resposta do servidor foi um erro (ex: erro 500)
+                    if (!response.ok) {
+                        // Tenta ler a mensagem de erro da API e a joga para o bloco .catch
+                        return response.json().then(errorData => {
+                            throw new Error(errorData.error || `Erro no servidor: ${response.status}`);
+                        });
+                    }
+                    return response.json();
+                })
                 .then(result => {
+                    // A API respondeu com sucesso, agora usamos a sua lógica original
                     if (result.error) {
                         resultadoTitulo.textContent = 'Erro na Análise';
                         resultadoTexto.textContent = result.error;
                         resultadoScore.textContent = '⚠️';
-                        resultadoDiv.style.backgroundColor = '#f2dede';
+                        resultadoDiv.style.backgroundColor = '#f8d7da'; // Cor de erro mais suave
                     } else {
                         resultadoScore.textContent = result.score_formatado;
                         if (result.score_formatado < 550) {
                             resultadoTitulo.textContent = 'Análise de Crédito: Recusado';
                             resultadoTexto.textContent = 'Infelizmente, não foi possível aprovar seu crédito neste momento.';
-                            resultadoDiv.style.backgroundColor = '#f2dede';
+                            resultadoDiv.style.backgroundColor = '#f8d7da';
                             if (result.motivos_recusa && result.motivos_recusa.length > 0) {
-                                result.motivos_recusa.forEach(motivo => { listaMotivosUl.appendChild(Object.assign(document.createElement('li'), { textContent: motivo })); });
+                                result.motivos_recusa.forEach(motivo => {
+                                    const li = document.createElement('li');
+                                    li.textContent = motivo;
+                                    listaMotivosUl.appendChild(li);
+                                });
                                 explicacaoRecusaDiv.style.display = 'block';
                             }
                         } else {
                             resultadoTitulo.textContent = 'Análise de Crédito: Aprovado';
                             resultadoTexto.textContent = 'Parabéns! Sua solicitação de crédito foi pré-aprovada.';
-                            resultadoDiv.style.backgroundColor = '#dff0d8';
+                            resultadoDiv.style.backgroundColor = '#d1e7dd'; // Cor de sucesso mais suave
                         }
                     }
                 })
