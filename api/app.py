@@ -1,4 +1,4 @@
-# /api/app.py - VERSÃO FINAL E DEFINITIVA PARA DEPLOY
+# /api/app.py - VERSÃO FINAL E DEFINITIVA
 import joblib
 import pandas as pd
 import numpy as np
@@ -7,7 +7,6 @@ from flask_cors import CORS
 import os
 
 # --- FUNÇÃO DE CRIAÇÃO DE FEATURES (IDÊNTICA À DO NOTEBOOK DE TREINO) ---
-# Esta função prepara os dados brutos do formulário para o pipeline.
 def criar_features_de_risco(df):
     """Função de engenharia de features que o modelo espera."""
     df_transformed = df.copy()
@@ -19,7 +18,7 @@ def criar_features_de_risco(df):
     # Tratamento robusto para evitar divisão por zero
     df_transformed['AMT_INCOME_TOTAL'] = df_transformed['AMT_INCOME_TOTAL'].replace(0, 1)
     df_transformed['AMT_CREDIT'] = df_transformed['AMT_CREDIT'].replace(0, 1)
-    df_transformed['DAYS_BIRTH'] = df_transformed['DAYS_BIRTH'].replace(0, -1) # Evita erro em EMPLOYED_BIRTH_RATIO
+    df_transformed['DAYS_BIRTH'] = df_transformed['DAYS_BIRTH'].replace(0, -1)
     
     # Cria as features de interação
     df_transformed['CREDIT_INCOME_RATIO'] = df_transformed['AMT_CREDIT'] / df_transformed['AMT_INCOME_TOTAL']
@@ -81,7 +80,6 @@ CORS(app)
 pipeline = None
 try:
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    # Carrega o NOVO modelo "limpo"
     model_path = os.path.join(base_dir, 'modelo_final_deploy.joblib') 
     pipeline = joblib.load(model_path)
     print("Pipeline de produção carregado com sucesso!")
@@ -134,12 +132,18 @@ def predict():
             score_final_prob = 0.10 - (scorecard_base - 650) / 1000.0
         else:
             # Fluxo de ML:
-            # 1. Cria o DataFrame
             input_df = pd.DataFrame([data])
-            # 2. CHAMA A FUNÇÃO DE TRANSFORMAÇÃO MANUALMENTE
             transformed_df = criar_features_de_risco(input_df)
-            # 3. Faz a predição no DataFrame já transformado
-            score_final_prob = pipeline.predict_proba(transformed_df)[:, 1][0]
+            
+            # --- CÓDIGO CORRIGIDO PARA A PREDIÇÃO ---
+            prediction_output = pipeline.predict_proba(transformed_df)
+            
+            if prediction_output.ndim == 2:
+                score_final_prob = prediction_output[:, 1][0]
+            else:
+                score_final_prob = prediction_output[0]
+            # --- FIM DA CORREÇÃO ---
+
             if score_final_prob > 0.5: motivos_recusa = gerar_motivos_ml(data)
 
         score_final_seguro = max(0.01, min(0.99, score_final_prob))
