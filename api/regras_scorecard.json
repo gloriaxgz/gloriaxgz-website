@@ -1,0 +1,27 @@
+{
+  "PONTUACAO_BASE": 500,
+  "REGRAS_PENALIDADE": {
+    "COMPROMETIMENTO_RENDA": {
+      "LIMITE": 0.6,
+      "PONTOS": -400,
+      "MOTIVO": "O valor da parcela compromete uma parte muito grande da sua renda mensal."
+    },
+    "IDADE_JOVEM": {
+      "LIMITE": 22,
+      "PONTOS": -150,
+      "MOTIVO": "A análise de perfis mais jovens indica um risco maior para este tipo de crédito."
+    },
+    "EMPREGO_RECENTE": {
+      "LIMITE": 1,
+      "PONTOS": -150,
+      "MOTIVO": "O pouco tempo no emprego atual é um fator de risco."
+    }
+  },
+  "REGRAS_BONUS": {
+    "CREDITO_TRIVIAL": {
+      "LIMITE": 1000,
+      "PONTOS": 200,
+      "MOTIVO": ""
+    }
+  }
+}
