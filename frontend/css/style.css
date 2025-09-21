@@ -2328,3 +2328,75 @@ body.pagina-inadimplencia #fh5co-hero {
   margin: 20px auto;  /* Centraliza a foto na coluna */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para dar profundidade */
 }
+
+/* =======================================================
+   CSS Corrigido para Responsividade dos Projetos (Mobile)
+   ======================================================= */
+
+@media screen and (max-width: 768px) {
+
+    /*
+     * A MUDANÇA PRINCIPAL:
+     * Força a "linha" (row) a se comportar como uma "coluna" (column),
+     * empilhando os itens verticalmente.
+     */
+    #fh5co-blog .row.justify-content-center {
+        display: flex;
+        flex-direction: column; /* A MÁGICA ACONTECE AQUI */
+        align-items: center; /* Centraliza os cards na vertical */
+    }
+
+    /*
+     * Agora, definimos a largura e o espaçamento dos cards
+     * que estão dentro dessa nova "coluna".
+     */
+    #fh5co-blog .col-md-4 {
+        width: 95%;  /* Usamos 95% para não colar nas bordas da tela */
+        margin-bottom: 40px;
+    }
+
+    /*
+     * Remove a margem extra do último card.
+     */
+    #fh5co-blog .col-md-4:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* =======================================================
+   Estilos Mobile FORÇADOS para o Texto do Cabeçalho (v2)
+   ======================================================= */
+
+@media screen and (max-width: 768px) {
+
+    /*
+     * Força o container a ocupar 100% da tela e se alinhar
+     */
+    #fh5co-hero .slider-text {
+        width: 100% !important;
+        padding: 0 15px !important;
+        text-align: center !important;
+        
+        left: auto !important;
+        margin-left: 0 !important;
+    }
+
+    /*
+     * Força a diminuição da fonte, a cor preta e o negrito do H1
+     */
+    #fh5co-hero .slider-text h1 {
+        font-size: 36px !important;
+        color: #000000 !important; /* ADICIONADO: Cor preta */
+        font-weight: bold !important; /* ADICIONADO: Negrito */
+    }
+
+    /*
+     * Força a diminuição da fonte, a cor preta e o negrito do H2
+     */
+    #fh5co-hero .slider-text h2 {
+        font-size: 18px !important;
+        line-height: 1.5 !important;
+        color: #000000 !important; /* ADICIONADO: Cor preta */
+        font-weight: bold !important; /* ADICIONADO: Negrito */
+    }
+}
