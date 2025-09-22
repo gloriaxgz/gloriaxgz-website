@@ -1083,58 +1083,6 @@ model.fit(
                 Foi criada uma suíte de testes de sanidade composta por diversos "perfis arquetípicos". Cada perfil foi desenhado para testar um limite específico da lógica de negócio, simulando cenários extremos que o modelo simplificado não conseguiu tratar corretamente. A performance do sistema híbrido foi então comparada com a do modelo ML puro para cada caso.
             </p>
 
-            <h4 style="margin-top: 25px;">Tabela Resumo de Validação</h4>
-            <div class="table-responsive">
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>Caso de Teste</th>
-                <th>Resultado Esperado</th>
-                <th>Resultado (ML Puro)</th>
-                <th>Resultado (Sistema Híbrido)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Perfil Milionário</strong><br><small>Renda altíssima, empréstimo irrisório.</small></td>
-                <td>Score > 950</td>
-                <td class="status-inconsistente">Score 620 (Inconsistente)</td>
-                <td class="status-corrigido">Score 980 (Corrigido)</td>
-            </tr>
-            <tr>
-                <td><strong>Perfil Superendividado</strong><br><small>Parcela compromete 90% da renda.</small></td>
-                <td>Score < 200</td>
-                <td class="status-inconsistente">Score 380 (Inconsistente)</td>
-                <td class="status-corrigido">Score 100 (Corrigido)</td>
-            </tr>
-            <tr>
-                <td><strong>Perfil Jovem Instável</strong><br><small>21 anos, 6 meses de emprego.</small></td>
-                <td>Score < 400</td>
-                <td class="status-inconsistente">Score 490 (Inconsistente)</td>
-                <td class="status-corrigido">Score 200 (Corrigido)</td>
-            </tr>
-            <tr>
-                <td><strong>Servidor Público Estável</strong><br><small>45 anos, 20 de emprego, crédito alto.</small></td>
-                <td>Score > 700</td>
-                <td class="status-inconsistente"> PREENCHER </td>
-                <td class="status-corrigido"> PREENCHER </td>
-            </tr>
-            <tr>
-                <td><strong>Empreendedor de Risco</strong><br><small>Renda alta, < 1 ano de emprego.</small></td>
-                <td>Score < 500</td>
-                <td class="status-inconsistente"> PREENCHER </td>
-                <td class="status-corrigido"> PREENCHER </td>
-            </tr>
-            <tr>
-                <td><strong>Aposentado Renda Fixa</strong><br><small>68 anos, aposentado, crédito baixo.</small></td>
-                <td>Score > 800</td>
-                <td class="status-inconsistente"> PREENCHER </td>
-                <td class="status-corrigido"> PREENCHER </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
             <h4 style="margin-top: 30px;">Conclusão da Validação</h4>
             <p>
                 A suíte de testes confirmou que <strong>a arquitetura híbrida foi eficaz em resolver as falhas de coerência</strong> do modelo simplificado. O sistema final demonstrou ser não apenas preditivo para os casos complexos, mas também seguro, robusto e alinhado com a lógica de negócio para os casos extremos.
