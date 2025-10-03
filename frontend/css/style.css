@@ -81,6 +81,7 @@ a:hover, a:active, a:focus {
   text-decoration: none;
 }
 p {
+  font-family: "Oxygen", sans-serif;
   margin-bottom: 20px;
 }
 h1, h2, h3, h4, h5, h6, figure {
@@ -2027,34 +2028,6 @@ min-height: 250px !important;}
   margin-bottom: 0;
   font-size: 0.9em;
 }
-.scorecard-details li.penalty { color: #c0392b; }
-.scorecard-details li.bonus { color: #27ae60; }
-.flowchart-detailed {
-border: 1px solid #ddd; border-radius: 8px; padding: 20px;
-background-color: #f9f9f9; font-family: 'Courier New', Courier, monospace; font-size: 1em;
-}
-.flowchart-detailed .step, .flowchart-detailed .decision-box, .flowchart-detailed .result-box {
-background-color: #fff; padding: 10px 15px; border-radius: 5px;
-box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 0 auto 10px auto;
-text-align: center; max-width: 90%;
-}
-.flowchart-detailed .arrow {
-text-align: center; margin-bottom: 10px; color: #888;
-font-size: 1.2em; font-weight: bold;
-}
-.flowchart-detailed .decision-box {
-background-color: #e3f2fd; border: 1px dashed #90caf9;
-}
-.flowchart-detailed .result-box {
-background-color: #e8f5e9; border: 1px solid #a5d6a7;
-}
-.flowchart-detailed .path-label { font-size: 0.9em; font-weight: bold; padding: 5px; }
-.flowchart-detailed .scorecard-details {
-background-color: #f0f0f0; border: 1px solid #ccc; padding: 15px;
-margin-bottom: 10px; border-radius: 5px;
-}
-.scorecard-details h5 { margin-top: 0; text-align: center; font-weight: bold; }
-.scorecard-details ul { padding-left: 20px; margin-bottom: 0; font-size: 0.9em; }
 .scorecard-details li.penalty { color: #c0392b; }
 .scorecard-details li.bonus { color: #27ae60; }
 .flowchart-detailed {
