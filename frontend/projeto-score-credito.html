@@ -1,595 +1,1179 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Modelo Preditivo para Risco de Crédito - Glória Xavier</title>
-    <meta name="description" content="Portfólio de projetos de Glória Xavier, Analista e Cientista de Dados." />
-    <meta name="keywords" content="data science, portfolio, projetos, analise de dados, machine learning" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta property="og:title" content=""/>
-    <meta property="og:image" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:site_name" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
-
-    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/flexslider.css">
-    <link rel="stylesheet" href="css/style.css">
-
-    <script src="js/modernizr-2.6.2.min.js"></script>
-</head>
-<body class="pagina-inadimplencia">
-
-    <div class="fh5co-loader"></div>
-
-    <div id="page">
-        <nav class="fh5co-nav" role="navigation">
-            <div class="container-wrap">
-                <div class="top-menu">
-                    <div class="row">
-                        <div class="col-xs-2">
-                            <div id="fh5co-logo"><a href="index.html">Glória</a></div>
-                        </div>
-                        <div class="col-xs-10 text-right menu-1">
-                            <ul>
-                                <li><a href="index.html">Início</a></li>
-                                <li class="active"><a>Projeto</a></li>
-                                <li><a href="about.html">Sobre</a></li>
-                                <li><a href="contact.html">Contato</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <div class="container-wrap">
-            <aside id="fh5co-hero">
-                <div class="flexslider">
-                    <ul class="slides">
-                        <li style="background-image: url(images/header.png);">
-                            <div class="overlay-gradient"></div>
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-3 slider-text slider-text-bg">
-                                    <div class="slider-text-inner text-center">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-            <div id="fh5co-work">
-                <p>
-                    Este projeto demonstra a aplicação prática de <b>Machine Learning</b> para previsão de inadimplência.
-                    Através da análise de dados socioeconômicos e históricos de clientes, desenvolvi um modelo capaz de calcular um <b>Credit Score</b>
-                    e classificar o risco de inadimplência de forma precisa. O objetivo é criar uma solução que apoie instituições financeiras na tomada
-                    de decisões estratégicas, reduzindo perdas e otimizando a concessão de crédito. Além da modelagem, o projeto inclui <b>pipeline de dados</b>,
-                    <b>otimização de hiperparâmetros</b> e <b>interface web interativa</b> para demonstração do sistema.
-                </p>
-                <br><br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="feature-box">
-                            <i class="icon-bargraph" style="font-size: 48px; color: #C80000;"></i>
-                            <br>
-                            <h4>Modelo Analítico de Alta Performance</h4>
-                            <p>Desenvolvimento de um modelo preditivo com LightGBM, otimizado para máxima performance (AUC de 0.77), utilizando técnicas avançadas de engenharia de atributos para identificar os principais fatores de risco em um dataset complexo.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="feature-box">
-                            <i class="icon-laptop" style="font-size: 48px; color: #C80000;"></i>
-                            <h4>Aplicação Web (Simulador de Risco)</h4>
-                            <p>Construção de um produto de dados completo com uma arquitetura híbrida (Regras + ML), API em Flask e frontend interativo, transformando a análise preditiva em uma ferramenta robusta, explicável e funcional.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingSimulator">
-                            <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordionExample" href="#collapseSimulator" aria-expanded="true" aria-controls="collapseSimulator">
-                                    <i class="icon-vcard"></i> Simulador de Crédito
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseSimulator" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSimulator">
-                            <div class="panel-body">
-                                <p class="text-center"><em>Preencha os campos abaixo para obter uma simulação da análise de crédito com base no modelo treinado.</em></p>
-                                <form id="credit-form" style="margin-top: 20px;">
-                                    <div class="row">
-                                        <div class="col-md-12"><h4>👤 Informações Pessoais</h4></div>
-                                        <div class="col-md-6">
-                                            <div class="form-group"><label for="DAYS_BIRTH">Idade</label><input type="number" class="form-control" id="DAYS_BIRTH" required placeholder="Ex: 45" min="18" max="100"></div>
-                                            <div class="form-group"><label for="NAME_FAMILY_STATUS">Estado Civil</label>
-                                                <select id="NAME_FAMILY_STATUS" class="form-control">
-                                                    <option value="Married">Casado(a)</option>
-                                                    <option value="Single / not married">Solteiro(a)</option>
-                                                    <option value="Civil marriage">União Estável</option>
-                                                    <option value="Separated">Separado(a)</option>
-                                                    <option value="Widow">Viúvo(a)</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group"><label for="CNT_CHILDREN">Quantidade de Filhos</label><input type="number" class="form-control" id="CNT_CHILDREN" required placeholder="Ex: 0" min="0" max="30"></div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group"><label for="NAME_EDUCATION_TYPE">Nível de Educação</label>
-                                                <select id="NAME_EDUCATION_TYPE" class="form-control">
-                                                    <option value="Secondary / secondary special">Ensino Médio / Técnico</option>
-                                                    <option value="Higher education">Ensino Superior</option>
-                                                    <option value="Incomplete higher">Superior Incompleto</option>
-                                                    <option value="Lower secondary">Ensino Fundamental</option>
-                                                    <option value="Academic degree">Pós-graduação</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group"><label for="NAME_HOUSING_TYPE">Tipo de Habitação</label>
-                                                <select id="NAME_HOUSING_TYPE" class="form-control">
-                                                    <option value="House / apartment">Casa / Apartamento Próprio</option>
-                                                    <option value="With parents">Com os Pais</option>
-                                                    <option value="Rented apartment">Apartamento Alugado</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12"><h4>💼 Situação de Trabalho e Renda</h4></div>
-                                        <div class="col-md-6">
-                                            <div class="form-group"><label for="AMT_INCOME_TOTAL">Renda Mensal</label><input type="number" class="form-control" id="AMT_INCOME_TOTAL" required placeholder="Ex: 5000" min="1" max="2000000"></div>
-                                            <div class="form-group"><label for="DAYS_EMPLOYED">Tempo de Trabalho (anos)</label><input type="number" class="form-control" id="DAYS_EMPLOYED" required placeholder="Ex: 10" min="0" max="60"></div>
-                                            <div class="form-group"><label for="NAME_INCOME_TYPE">Tipo de Renda</label>
-                                                <select id="NAME_INCOME_TYPE" class="form-control">
-                                                    <option value="Working">Assalariado(a)</option>
-                                                    <option value="Commercial associate">Sócio(a)</option>
-                                                    <option value="Pensioner">Aposentado(a)</option>
-                                                    <option value="State servant">Servidor(a) Público</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group"><label for="OCCUPATION_TYPE">Tipo de Emprego</label>
-                                                <select id="OCCUPATION_TYPE" class="form-control">
-                                                    <option value="Laborers">Operário(a)</option>
-                                                    <option value="Sales staff">Vendedor(a)</option>
-                                                    <option value="Core staff">Equipe Principal</option>
-                                                    <option value="Managers">Gerente</option>
-                                                    <option value="Drivers">Motorista</option>
-                                                    <option value="High skill tech staff">Técnico Especializado</option>
-                                                    <option value="Accountants">Contador(a)</option>
-                                                    <option value="Medicine staff">Área da Saúde</option>
-                                                    <option value="Security staff">Segurança</option>
-                                                    <option value="Cooking staff">Cozinheiro(a)</option>
-                                                    <option value="Cleaning staff">Limpeza</option>
-                                                    <option value="Private service staff">Serviço Particular</option>
-                                                    <option value="Low-skill Laborers">Trabalho de Baixa Qualificação</option>
-                                                    <option value="Waiters/barmen staff">Garçom/Barman</option>
-                                                    <option value="Secretaries">Secretário(a)</option>
-                                                    <option value="Realty agents">Corretor(a)</option>
-                                                    <option value="HR staff">Recursos Humanos</option>
-                                                    <option value="IT staff">Tecnologia da Informação</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group"><label for="ORGANIZATION_TYPE">Tipo de Organização</label>
-                                                <select id="ORGANIZATION_TYPE" class="form-control">
-                                                    <option value="Business Entity Type 3">Empresa Privada</option>
-                                                    <option value="Self-employed">Autônomo(a)</option>
-                                                    <option value="Other">Outro</option>
-                                                    <option value="Government">Governo</option>
-                                                    <option value="School">Educação</option>
-                                                    <option value="Medicine">Saúde</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12"><h4>🏠 Informações do Empréstimo</h4></div>
-                                        <div class="col-md-6">
-                                            <div class="form-group"><label for="NAME_CONTRACT_TYPE_x">Tipo de Contrato</label>
-                                                <select id="NAME_CONTRACT_TYPE_x" class="form-control">
-                                                    <option value="Cash loans">Empréstimo Pessoal</option>
-                                                    <option value="Revolving loans">Crédito Rotativo</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group"><label for="AMT_CREDIT">Valor Solicitado</label><input type="number" class="form-control" id="AMT_CREDIT" required placeholder="Ex: 250000" min="1" max="10000000"></div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group"><label for="AMT_ANNUITY">Valor da Parcela</label><input type="number" class="form-control" id="AMT_ANNUITY" required placeholder="Ex: 12000" min="1" max="500000"></div>
-                                            <div class="form-group"><label for="AMT_GOODS_PRICE">Valor do Bem</label><input type="number" class="form-control" id="AMT_GOODS_PRICE" required placeholder="Ex: 250000" min="1" max="10000000"></div>
-                                        </div>
-                                    </div>
-                                    <div id="error-messages" class="alert alert-danger" style="display: none; text-align: left; margin-bottom: 20px;">
-                                        <strong>Por favor, corrija os seguintes erros:</strong>
-                                        <ul id="error-list" style="margin-top: 10px;"></ul>
-                                    </div>
-                                    <div class="row" style="margin-top: 20px;">
-                                        <div class="col-md-12 text-center">
-                                            <button type="submit" class="btn btn-primary btn-lg">Analisar Crédito</button>
-                                        </div>
-                                    </div>
-                                </form>
-                                <div id="resultado-analise" style="margin-top: 30px; display: none; text-align: center; padding: 20px; border-radius: 5px; transition: all 0.5s ease;">
-                                    <h3 id="resultado-titulo"></h3>
-                                    <p style="font-size: 1.1em;">Seu Score de Crédito é:</p>
-                                    <p id="resultado-score" style="font-size: 3.5em; font-weight: 700; margin-top: -10px; margin-bottom: 20px;"></p>
-                                    <p id="resultado-texto"></p>
-                                    <div id="explicacao-recusa" class="panel-group" style="display: none; margin-top: 20px; text-align: left;">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading" role="tab">
-                                                <h4 class="panel-title">
-                                                    <a role="button" data-toggle="collapse" href="#collapseExplicacao">Entenda os principais motivos da análise</a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapseExplicacao" class="panel-collapse collapse">
-                                                <div class="panel-body">
-                                                    <p>Com base em nosso modelo, os seguintes fatores tiveram maior peso nesta decisão:</p>
-                                                    <ul id="lista-motivos-recusa"></ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h2>Parte 1: O Modelo Analítico Completo (O Trabalho de Data Science)</h2>
-                    <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingResumoAnalise">
-        <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#collapseResumoAnalise" aria-expanded="true" aria-controls="collapseResumoAnalise">
-                RESUMO - Visão Geral da Parte 1
-            </a>
-        </h4>
+ <head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Modelo Preditivo para Risco de Crédito - Glória Xavier
+  </title>
+  <meta content="Portfólio de projetos de Glória Xavier, Analista e Cientista de Dados." name="description">
+   <meta content="data science, portfolio, projetos, analise de dados, machine learning" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+     <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet"/>
+     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet"/>
+     <link href="css/animate.css" rel="stylesheet"/>
+     <link href="css/icomoon.css" rel="stylesheet"/>
+     <link href="css/bootstrap.css" rel="stylesheet"/>
+     <link href="css/magnific-popup.css" rel="stylesheet"/>
+     <link href="css/flexslider.css" rel="stylesheet"/>
+     <link href="css/style.css" rel="stylesheet"/>
+     <script src="js/modernizr-2.6.2.min.js">
+     </script>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class="pagina-inadimplencia">
+  <div class="gx-loader">
+  </div>
+  <div id="page">
+   <nav class="gx-nav" role="navigation">
+    <div class="container-wrap">
+     <div class="top-menu">
+      <div class="row">
+       <div class="col-xs-2">
+        <div id="gx-logo">
+         <a href="index.html">
+          Glória
+         </a>
+        </div>
+       </div>
+       <div class="col-xs-10 text-right menu-1">
+        <ul>
+         <li>
+          <a href="index.html">
+           Início
+          </a>
+         </li>
+         <li class="active">
+          <a>
+           Projeto
+          </a>
+         </li>
+         <li>
+          <a href="about.html">
+           Sobre
+          </a>
+         </li>
+         <li>
+          <a href="contact.html">
+           Contato
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
     </div>
-    <div id="collapseResumoAnalise" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingResumoAnalise">
+   </nav>
+   <div class="container-wrap">
+    <aside id="gx-hero">
+     <div class="flexslider">
+      <ul class="slides">
+       <li style="background-image: url(images/header.png);">
+        <div class="overlay-gradient">
+        </div>
+        <div class="row">
+         <div class="col-md-6 col-md-offset-3 slider-text slider-text-bg">
+          <div class="slider-text-inner text-center">
+          </div>
+         </div>
+        </div>
+       </li>
+      </ul>
+     </div>
+    </aside>
+    <div id="gx-work">
+     <p>
+      Este projeto demonstra a aplicação prática de
+      <b>
+       Machine Learning
+      </b>
+      para previsão de inadimplência.
+                    Através da análise de dados socioeconômicos e históricos de clientes, desenvolvi um modelo capaz de calcular um
+      <b>
+       Credit Score
+      </b>
+      e classificar o risco de inadimplência de forma precisa. O objetivo é criar uma solução que apoie instituições financeiras na tomada
+                    de decisões estratégicas, reduzindo perdas e otimizando a concessão de crédito. Além da modelagem, o projeto inclui
+      <b>
+       pipeline de dados
+      </b>
+      ,
+      <b>
+       otimização de hiperparâmetros
+      </b>
+      e
+      <b>
+       interface web interativa
+      </b>
+      para demonstração do sistema.
+     </p>
+     <br/>
+     <br/>
+     <div class="row">
+      <div class="col-md-6">
+       <div class="feature-box">
+        <i class="icon-bargraph" style="font-size: 48px; color: #C80000;">
+        </i>
+        <br/>
+        <h4>
+         Modelo Analítico de Alta Performance
+        </h4>
+        <p>
+         Desenvolvimento de um modelo preditivo com LightGBM, otimizado para máxima performance (AUC de 0.77), utilizando técnicas avançadas de engenharia de atributos para identificar os principais fatores de risco em um dataset complexo.
+        </p>
+       </div>
+      </div>
+      <div class="col-md-6">
+       <div class="feature-box">
+        <i class="icon-laptop" style="font-size: 48px; color: #C80000;">
+        </i>
+        <h4>
+         Aplicação Web (Simulador de Risco)
+        </h4>
+        <p>
+         Construção de um produto de dados completo com uma arquitetura híbrida (Regras + ML), API em Flask e frontend interativo, transformando a análise preditiva em uma ferramenta robusta, explicável e funcional.
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingSimulator" role="tab">
+        <h4 class="panel-title">
+         <a aria-controls="collapseSimulator" aria-expanded="true" data-parent="#accordionExample" data-toggle="collapse" href="#collapseSimulator" role="button">
+          <i class="icon-vcard">
+          </i>
+          Simulador de Crédito
+         </a>
+        </h4>
+       </div>
+       <div aria-labelledby="headingSimulator" class="panel-collapse collapse in" id="collapseSimulator" role="tabpanel">
         <div class="panel-body">
-
-            <div class="row summary-row">
-
-                <div class="col-md-4 col-sm-6 summary-card-wrapper">
-                    <div class="summary-card-item">
-                        <div class="summary-card-header">
-                            <i class="fas fa-bullseye summary-card-icon" style="color: #007bff;"></i>
-                            <h5 class="summary-card-title">Objetivos</h5>
-                        </div>
-                        <div class="summary-card-content">
-                            <p>
-                                Construir um modelo de alta performance (<strong>AUC &gt; 0.75</strong>) para prever inadimplência, a partir da análise e engenharia de atributos em um dataset complexo de múltiplas fontes.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 summary-card-wrapper">
-                    <div class="summary-card-item">
-                        <div class="summary-card-header">
-                            <i class="fas fa-cogs summary-card-icon" style="color: #6f42c1;"></i>
-                            <h5 class="summary-card-title">Tecnologias</h5>
-                        </div>
-                        <div class="summary-card-content">
-                            <p>
-                                Projeto desenvolvido em <strong>Python</strong>, utilizando <strong>Pandas</strong> para manipulação de dados, <strong>LightGBM</strong> para modelagem, e <strong>Scikit-learn</strong> para pré-processamento e validação.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 summary-card-wrapper">
-                    <div class="summary-card-item">
-                        <div class="summary-card-header">
-                            <i class="fas fa-database summary-card-icon" style="color: #20c997;"></i>
-                            <h5 class="summary-card-title">Dados</h5>
-                        </div>
-                        <div class="summary-card-content">
-                            <p>
-                                Utilizado o dataset "Home Credit Default Risk", com <strong>8 tabelas relacionais</strong> contendo o histórico de crédito de mais de <strong>300 mil clientes</strong>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 summary-card-wrapper">
-                    <div class="summary-card-item">
-                        <div class="summary-card-header">
-                            <i class="fas fa-sitemap summary-card-icon" style="color: #fd7e14;"></i>
-                            <h5 class="summary-card-title">Pré-processamento</h5>
-                        </div>
-                        <div class="summary-card-content">
-                            <p>
-                                Executado um pipeline rigoroso, incluindo tratamento de anomalias (identificadas em <strong>18% dos registros</strong>) e engenharia de atributos que criou centenas de novas features a partir da <strong>agregação de dados históricos</strong>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 summary-card-wrapper">
-                    <div class="summary-card-item">
-                        <div class="summary-card-header">
-                            <i class="fas fa-brain summary-card-icon" style="color: #ffc107;"></i>
-                            <h5 class="summary-card-title">Treinamento</h5>
-                        </div>
-                        <div class="summary-card-content">
-                            <p>
-                                O modelo <strong>LightGBM</strong> foi avaliado com <strong>Validação Cruzada</strong> (5-folds) para garantir robustez e treinado com <strong>Early Stopping</strong> para evitar overfitting, além de usar <code>scale_pos_weight</code> para corrigir o desbalanceamento dos dados.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 summary-card-wrapper">
-                    <div class="summary-card-item">
-                        <div class="summary-card-header">
-                            <i class="fas fa-trophy summary-card-icon" style="color: #28a745;"></i>
-                            <h5 class="summary-card-title">Resultado</h5>
-                        </div>
-                        <div class="summary-card-content">
-                            <p>
-                                O modelo final alcançou uma <strong>AUC média de 0.77+</strong> na validação cruzada, superando a meta inicial e demonstrando forte capacidade preditiva.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+         <p class="text-center">
+          <em>
+           Preencha os campos abaixo para obter uma simulação da análise de crédito com base no modelo treinado.
+          </em>
+         </p>
+         <form id="credit-form" style="margin-top: 20px;">
+          <div class="row">
+           <div class="col-md-12">
+            <h4>
+             👤 Informações Pessoais
+            </h4>
+           </div>
+           <div class="col-md-6">
+            <div class="form-group">
+             <label for="DAYS_BIRTH">
+              Idade
+             </label>
+             <input class="form-control" id="DAYS_BIRTH" max="100" min="18" placeholder="Ex: 45" required="" type="number"/>
             </div>
+            <div class="form-group">
+             <label for="NAME_FAMILY_STATUS">
+              Estado Civil
+             </label>
+             <select class="form-control" id="NAME_FAMILY_STATUS">
+              <option value="Married">
+               Casado(a)
+              </option>
+              <option value="Single / not married">
+               Solteiro(a)
+              </option>
+              <option value="Civil marriage">
+               União Estável
+              </option>
+              <option value="Separated">
+               Separado(a)
+              </option>
+              <option value="Widow">
+               Viúvo(a)
+              </option>
+             </select>
+            </div>
+            <div class="form-group">
+             <label for="CNT_CHILDREN">
+              Quantidade de Filhos
+             </label>
+             <input class="form-control" id="CNT_CHILDREN" max="30" min="0" placeholder="Ex: 0" required="" type="number"/>
+            </div>
+           </div>
+           <div class="col-md-6">
+            <div class="form-group">
+             <label for="NAME_EDUCATION_TYPE">
+              Nível de Educação
+             </label>
+             <select class="form-control" id="NAME_EDUCATION_TYPE">
+              <option value="Secondary / secondary special">
+               Ensino Médio / Técnico
+              </option>
+              <option value="Higher education">
+               Ensino Superior
+              </option>
+              <option value="Incomplete higher">
+               Superior Incompleto
+              </option>
+              <option value="Lower secondary">
+               Ensino Fundamental
+              </option>
+              <option value="Academic degree">
+               Pós-graduação
+              </option>
+             </select>
+            </div>
+            <div class="form-group">
+             <label for="NAME_HOUSING_TYPE">
+              Tipo de Habitação
+             </label>
+             <select class="form-control" id="NAME_HOUSING_TYPE">
+              <option value="House / apartment">
+               Casa / Apartamento Próprio
+              </option>
+              <option value="With parents">
+               Com os Pais
+              </option>
+              <option value="Rented apartment">
+               Apartamento Alugado
+              </option>
+             </select>
+            </div>
+           </div>
+          </div>
+          <div class="row">
+           <div class="col-md-12">
+            <h4>
+             💼 Situação de Trabalho e Renda
+            </h4>
+           </div>
+           <div class="col-md-6">
+            <div class="form-group">
+             <label for="AMT_INCOME_TOTAL">
+              Renda Mensal
+             </label>
+             <input class="form-control" id="AMT_INCOME_TOTAL" max="2000000" min="1" placeholder="Ex: 5000" required="" type="number"/>
+            </div>
+            <div class="form-group">
+             <label for="DAYS_EMPLOYED">
+              Tempo de Trabalho (anos)
+             </label>
+             <input class="form-control" id="DAYS_EMPLOYED" max="60" min="0" placeholder="Ex: 10" required="" type="number"/>
+            </div>
+            <div class="form-group">
+             <label for="NAME_INCOME_TYPE">
+              Tipo de Renda
+             </label>
+             <select class="form-control" id="NAME_INCOME_TYPE">
+              <option value="Working">
+               Assalariado(a)
+              </option>
+              <option value="Commercial associate">
+               Sócio(a)
+              </option>
+              <option value="Pensioner">
+               Aposentado(a)
+              </option>
+              <option value="State servant">
+               Servidor(a) Público
+              </option>
+             </select>
+            </div>
+           </div>
+           <div class="col-md-6">
+            <div class="form-group">
+             <label for="OCCUPATION_TYPE">
+              Tipo de Emprego
+             </label>
+             <select class="form-control" id="OCCUPATION_TYPE">
+              <option value="Laborers">
+               Operário(a)
+              </option>
+              <option value="Sales staff">
+               Vendedor(a)
+              </option>
+              <option value="Core staff">
+               Equipe Principal
+              </option>
+              <option value="Managers">
+               Gerente
+              </option>
+              <option value="Drivers">
+               Motorista
+              </option>
+              <option value="High skill tech staff">
+               Técnico Especializado
+              </option>
+              <option value="Accountants">
+               Contador(a)
+              </option>
+              <option value="Medicine staff">
+               Área da Saúde
+              </option>
+              <option value="Security staff">
+               Segurança
+              </option>
+              <option value="Cooking staff">
+               Cozinheiro(a)
+              </option>
+              <option value="Cleaning staff">
+               Limpeza
+              </option>
+              <option value="Private service staff">
+               Serviço Particular
+              </option>
+              <option value="Low-skill Laborers">
+               Trabalho de Baixa Qualificação
+              </option>
+              <option value="Waiters/barmen staff">
+               Garçom/Barman
+              </option>
+              <option value="Secretaries">
+               Secretário(a)
+              </option>
+              <option value="Realty agents">
+               Corretor(a)
+              </option>
+              <option value="HR staff">
+               Recursos Humanos
+              </option>
+              <option value="IT staff">
+               Tecnologia da Informação
+              </option>
+             </select>
+            </div>
+            <div class="form-group">
+             <label for="ORGANIZATION_TYPE">
+              Tipo de Organização
+             </label>
+             <select class="form-control" id="ORGANIZATION_TYPE">
+              <option value="Business Entity Type 3">
+               Empresa Privada
+              </option>
+              <option value="Self-employed">
+               Autônomo(a)
+              </option>
+              <option value="Other">
+               Outro
+              </option>
+              <option value="Government">
+               Governo
+              </option>
+              <option value="School">
+               Educação
+              </option>
+              <option value="Medicine">
+               Saúde
+              </option>
+             </select>
+            </div>
+           </div>
+          </div>
+          <div class="row">
+           <div class="col-md-12">
+            <h4>
+             🏠 Informações do Empréstimo
+            </h4>
+           </div>
+           <div class="col-md-6">
+            <div class="form-group">
+             <label for="NAME_CONTRACT_TYPE_x">
+              Tipo de Contrato
+             </label>
+             <select class="form-control" id="NAME_CONTRACT_TYPE_x">
+              <option value="Cash loans">
+               Empréstimo Pessoal
+              </option>
+              <option value="Revolving loans">
+               Crédito Rotativo
+              </option>
+             </select>
+            </div>
+            <div class="form-group">
+             <label for="AMT_CREDIT">
+              Valor Solicitado
+             </label>
+             <input class="form-control" id="AMT_CREDIT" max="10000000" min="1" placeholder="Ex: 250000" required="" type="number"/>
+            </div>
+           </div>
+           <div class="col-md-6">
+            <div class="form-group">
+             <label for="AMT_ANNUITY">
+              Valor da Parcela
+             </label>
+             <input class="form-control" id="AMT_ANNUITY" max="500000" min="1" placeholder="Ex: 12000" required="" type="number"/>
+            </div>
+            <div class="form-group">
+             <label for="AMT_GOODS_PRICE">
+              Valor do Bem
+             </label>
+             <input class="form-control" id="AMT_GOODS_PRICE" max="10000000" min="1" placeholder="Ex: 250000" required="" type="number"/>
+            </div>
+           </div>
+          </div>
+          <div class="alert alert-danger" id="error-messages" style="display: none; text-align: left; margin-bottom: 20px;">
+           <strong>
+            Por favor, corrija os seguintes erros:
+           </strong>
+           <ul id="error-list" style="margin-top: 10px;">
+           </ul>
+          </div>
+          <div class="row" style="margin-top: 20px;">
+           <div class="col-md-12 text-center">
+            <button class="btn btn-primary btn-lg" type="submit">
+             Analisar Crédito
+            </button>
+           </div>
+          </div>
+         </form>
+         <div id="resultado-analise" style="margin-top: 30px; display: none; text-align: center; padding: 20px; border-radius: 5px; transition: all 0.5s ease;">
+          <h3 id="resultado-titulo">
+          </h3>
+          <p style="font-size: 1.1em;">
+           Seu Score de Crédito é:
+          </p>
+          <p id="resultado-score" style="font-size: 3.5em; font-weight: 700; margin-top: -10px; margin-bottom: 20px;">
+          </p>
+          <p id="resultado-texto">
+          </p>
+          <div class="panel-group" id="explicacao-recusa" style="display: none; margin-top: 20px; text-align: left;">
+           <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+             <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapseExplicacao" role="button">
+               Entenda os principais motivos da análise
+              </a>
+             </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapseExplicacao">
+             <div class="panel-body">
+              <p>
+               Com base em nosso modelo, os seguintes fatores tiveram maior peso nesta decisão:
+              </p>
+              <ul id="lista-motivos-recusa">
+              </ul>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
         </div>
-    </div>
-</div>
-                <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingObjetivos">
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" href="#collapseObjetivos" aria-expanded="false" aria-controls="collapseObjetivos">
-                            Objetivos do Projeto
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseObjetivos" class="panel-collapse collapse collapse" role="tabpanel" aria-labelledby="headingObjetivos">
-                    <div class="panel-body">
-                        <p>
-                            O objetivo principal desta fase foi desenvolver um modelo de Machine Learning de alta acurácia para a previsão de inadimplência, alinhando metas técnicas com os objetivos de negócio de uma instituição financeira.
-                        </p><br>
-
-                        <h4>Objetivos de Negócio:</h4>
-                        <ul class="business-objective-list"> <li><strong>Redução de Perdas (Loss Reduction):</strong> criar uma solução capaz de identificar com antecedência clientes com alto risco de inadimplência, permitindo decisões de crédito mais seguras e a redução de perdas financeiras.</li>
-                            <li><strong>Aprovação Otimizada:</strong> melhorar a capacidade de diferenciar clientes bons e maus pagadores para maximizar a aprovação de crédito para clientes com baixo risco, aumentando a carteira de clientes de forma saudável.</li>
-                        </ul><br>
-
-                        <h4>Objetivos Técnicos:</h4>
-                        <ul class="technical-objective-list"> <li><strong>Análise Exploratória e Engenharia de Atributos:</strong> realizar uma investigação em um dataset complexo e multidimensional para extrair insights e construir novos atributos (features) que aumentassem o poder preditivo do modelo.</li>
-                            <li><strong>Construção de um Modelo de Alta Performance:</strong> selecionar, treinar e otimizar um modelo de Machine Learning (LightGBM) para maximizar a principal métrica de avaliação, a <strong>AUC (Area Under the Curve)</strong>.</li>
-                            <li><strong>Meta de Performance:</strong> com base nos benchmarks da competição original do Kaggle, onde os melhores modelos atingiram uma AUC próxima a 0.80, foi estipulada uma <strong>meta realista de alcançar um score entre 0.75 e 0.80</strong>. Este intervalo reflete um modelo de alta performance, considerando a complexidade e a qualidade inerente dos dados, que apresentam um nível significativo de ruído e dificuldade para previsões de maior acurácia.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTecnologias">
+       </div>
+      </div>
+      <h2>
+       Parte 1: O Modelo Analítico Completo (O Trabalho de Data Science)
+      </h2>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingResumoAnalise" role="tab">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#collapseTecnologias" aria-expanded="false" aria-controls="collapseTecnologias">
-                Tecnologias Aplicadas
-            </a>
+         <a aria-controls="collapseResumoAnalise" aria-expanded="true" data-toggle="collapse" href="#collapseResumoAnalise" role="button">
+          RESUMO - Visão Geral da Parte 1
+         </a>
         </h4>
+       </div>
+       <div aria-labelledby="headingResumoAnalise" class="panel-collapse collapse in" id="collapseResumoAnalise" role="tabpanel">
+        <div class="panel-body">
+         <div class="row summary-row">
+          <div class="col-md-4 col-sm-6 summary-card-wrapper">
+           <div class="summary-card-item">
+            <div class="summary-card-header">
+             <i class="fas fa-bullseye summary-card-icon" style="color: #007bff;">
+             </i>
+             <h5 class="summary-card-title">
+              Objetivos
+             </h5>
             </div>
-            <div id="collapseTecnologias" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTecnologias">
-                <div class="panel-body">
-                    <p>
-                        Para o desenvolvimento completo deste projeto, da análise de dados à aplicação web, foi utilizado o seguinte conjunto de tecnologias, bibliotecas e ferramentas:
-                    </p>
-
-                    <h4 style="margin-top: 25px;">Análise e Modelagem (Stack Python)</h4>
-                    <ul class="list-with-bars" data-color="#2196F3">
-                        <li><strong>Python:</strong> linguagem principal para toda a análise, pré-processamento e desenvolvimento do backend.</li>
-                        <li><strong>Pandas & NumPy:</strong> para manipulação, limpeza e estruturação extensiva dos dados em formato de DataFrames.</li>
-                        <li><strong>Scikit-learn:</strong> utilizado para pré-processamento, cálculo de métricas e implementação da validação cruzada.</li>
-                        <li><strong>LightGBM:</strong> como o algoritmo de Machine Learning principal, escolhido por sua alta performance e eficiência.</li>
-                        <li><strong>Matplotlib & Seaborn:</strong> para a criação de visualizações e gráficos na análise exploratória.</li>
-                        <li><strong>SHAP:</strong> para a etapa de explicabilidade do modelo (XAI), permitindo a interpretação das decisões.</li>
-                        <li><strong>Jupyter Notebook:</strong> como ambiente principal para a análise exploratória e desenvolvimento iterativo.</li>
-                    </ul>
-
-                    <h4 style="margin-top: 30px;">Backend e API</h4>
-                    <ul class="list-with-bars" data-color="#4CAF50">
-                        <li><strong>Flask:</strong> micro-framework Python utilizado para construir a API REST que serve as previsões do modelo.</li>
-                        <li><strong>Joblib:</strong> para a serialização (salvar e carregar) do pipeline de Machine Learning treinado para uso na aplicação.</li>
-                    </ul>
-
-                    <h4 style="margin-top: 30px;">Frontend (Interface do Simulador)</h4>
-                    <ul class="list-with-bars" data-color="#FFA726">
-                        <li><strong>HTML5 & CSS3:</strong> para a estruturação e estilização da página e da interface da calculadora.</li>
-                        <li><strong>JavaScript (ES6):</strong> para a interatividade, validação de formulários e comunicação com a API via requisições <code>fetch</code>.</li>
-                        <li><strong>Bootstrap:</strong> framework CSS utilizado para criar um layout responsivo e profissional de forma ágil.</li>
-                    </ul>
-                </div>
+            <div class="summary-card-content">
+             <p>
+              Construir um modelo de alta performance (
+              <strong>
+               AUC &gt; 0.75
+              </strong>
+              ) para prever inadimplência, a partir da análise e engenharia de atributos em um dataset complexo de múltiplas fontes.
+             </p>
             </div>
+           </div>
+          </div>
+          <div class="col-md-4 col-sm-6 summary-card-wrapper">
+           <div class="summary-card-item">
+            <div class="summary-card-header">
+             <i class="fas fa-cogs summary-card-icon" style="color: #6f42c1;">
+             </i>
+             <h5 class="summary-card-title">
+              Tecnologias
+             </h5>
+            </div>
+            <div class="summary-card-content">
+             <p>
+              Projeto desenvolvido em
+              <strong>
+               Python
+              </strong>
+              , utilizando
+              <strong>
+               Pandas
+              </strong>
+              para manipulação de dados,
+              <strong>
+               LightGBM
+              </strong>
+              para modelagem, e
+              <strong>
+               Scikit-learn
+              </strong>
+              para pré-processamento e validação.
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-4 col-sm-6 summary-card-wrapper">
+           <div class="summary-card-item">
+            <div class="summary-card-header">
+             <i class="fas fa-database summary-card-icon" style="color: #20c997;">
+             </i>
+             <h5 class="summary-card-title">
+              Dados
+             </h5>
+            </div>
+            <div class="summary-card-content">
+             <p>
+              Utilizado o dataset "Home Credit Default Risk", com
+              <strong>
+               8 tabelas relacionais
+              </strong>
+              contendo o histórico de crédito de mais de
+              <strong>
+               300 mil clientes
+              </strong>
+              .
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-4 col-sm-6 summary-card-wrapper">
+           <div class="summary-card-item">
+            <div class="summary-card-header">
+             <i class="fas fa-sitemap summary-card-icon" style="color: #fd7e14;">
+             </i>
+             <h5 class="summary-card-title">
+              Pré-processamento
+             </h5>
+            </div>
+            <div class="summary-card-content">
+             <p>
+              Executado um pipeline rigoroso, incluindo tratamento de anomalias (identificadas em
+              <strong>
+               18% dos registros
+              </strong>
+              ) e engenharia de atributos que criou centenas de novas features a partir da
+              <strong>
+               agregação de dados históricos
+              </strong>
+              .
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-4 col-sm-6 summary-card-wrapper">
+           <div class="summary-card-item">
+            <div class="summary-card-header">
+             <i class="fas fa-brain summary-card-icon" style="color: #ffc107;">
+             </i>
+             <h5 class="summary-card-title">
+              Treinamento
+             </h5>
+            </div>
+            <div class="summary-card-content">
+             <p>
+              O modelo
+              <strong>
+               LightGBM
+              </strong>
+              foi avaliado com
+              <strong>
+               Validação Cruzada
+              </strong>
+              (5-folds) para garantir robustez e treinado com
+              <strong>
+               Early Stopping
+              </strong>
+              para evitar overfitting, além de usar
+              <code>
+               scale_pos_weight
+              </code>
+              para corrigir o desbalanceamento dos dados.
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-4 col-sm-6 summary-card-wrapper">
+           <div class="summary-card-item">
+            <div class="summary-card-header">
+             <i class="fas fa-trophy summary-card-icon" style="color: #28a745;">
+             </i>
+             <h5 class="summary-card-title">
+              Resultado
+             </h5>
+            </div>
+            <div class="summary-card-content">
+             <p>
+              O modelo final alcançou uma
+              <strong>
+               AUC média de 0.77+
+              </strong>
+              na validação cruzada, superando a meta inicial e demonstrando forte capacidade preditiva.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
         </div>
-                <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionExample" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Dados Utilizados
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                       <p>
-                O dataset utilizado neste projeto é o <strong>"Home Credit Default Risk"</strong>, disponibilizado pela instituição financeira Home Credit em uma competição na plataforma Kaggle. O objetivo é desafiar cientistas de dados a prever a capacidade de pagamento de clientes, muitos dos quais possuem pouco ou nenhum histórico de crédito tradicional (a população "unbanked").
-            </p>
-
-            <h4>Estrutura e Complexidade dos Dados</h4>
-            <p>
-                A principal característica do projeto é sua estrutura relacional complexa. Para criar um perfil completo de cada cliente, foi necessário processar, agregar e unir dados de 8 tabelas interligadas, como ilustrado no diagrama abaixo.
-            </p>
-            
-            <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
-                <img src="images/image_rel.png" class="img-responsive img-rounded" alt="Diagrama da estrutura relacional do dataset" style="margin: 0 auto;">
-                <p class="text-center" style="margin-top: 10px;"><em>Figura 1: Esquema relacional do dataset.</em></p>
-            </div>
-
-            <h4>Principais Tabelas e Colunas</h4>
-            <p>A seguir, uma descrição das colunas mais relevantes das duas tabelas principais utilizadas na modelagem.</p>
-
-            <h5><strong>Tabela Principal: application_train.csv</strong></h5>
-            <p>Contém os dados da solicitação de empréstimo e a variável-alvo. Cada linha é uma solicitação única.</p>
-            <div class="table-responsive">
-    <table class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>Campo</th>
-                        <th>Tipo</th>
-                        <th>Descrição</th>
-                        <th>Exemplo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>SK_ID_CURR</td>
-                        <td>Integer</td>
-                        <td>ID único da solicitação de empréstimo.</td>
-                        <td>100002</td>
-                    </tr>
-                    <tr>
-                        <td><strong>TARGET</strong></td>
-                        <td><strong>Boolean</strong></td>
-                        <td><strong>A variável-alvo: 1 para inadimplente, 0 para adimplente.</strong></td>
-                        <td><strong>1</strong></td>
-                    </tr>
-                    <tr>
-                        <td>AMT_INCOME_TOTAL</td>
-                        <td>Float</td>
-                        <td>Renda mensal do cliente.</td>
-                        <td>202500.0</td>
-                    </tr>
-                    <tr>
-                        <td>AMT_CREDIT</td>
-                        <td>Float</td>
-                        <td>Valor total do crédito solicitado.</td>
-                        <td>406597.5</td>
-                    </tr>
-                    <tr>
-                        <td>NAME_EDUCATION_TYPE</td>
-                        <td>String</td>
-                        <td>Nível de escolaridade do cliente.</td>
-                        <td>'Higher education'</td>
-                    </tr>
-                    <tr>
-                        <td>DAYS_BIRTH</td>
-                        <td>Integer</td>
-                        <td>Idade do cliente em dias (negativo).</td>
-                        <td>-9461</td>
-                    </tr>
-                    <tr>
-                        <td><strong>EXT_SOURCE_2 / 3</strong></td>
-                        <td><strong>Float</strong></td>
-                        <td><strong>Scores normalizados de fontes de dados externas (cruciais para a predição).</strong></td>
-                        <td><strong>0.262949</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
-
-            <h5 style="margin-top: 30px;"><strong>Tabela Externa: bureau.csv</strong></h5>
-            <p>Contém informações sobre créditos anteriores do cliente em outras instituições financeiras.</p>
-            <div class="table-responsive">
-    <table class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>Campo</th>
-                        <th>Tipo</th>
-                        <th>Descrição</th>
-                        <th>Exemplo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>SK_ID_CURR</td>
-                        <td>Integer</td>
-                        <td>ID da solicitação (chave para unir com a tabela principal).</td>
-                        <td>215354</td>
-                    </tr>
-                    <tr>
-                        <td>CREDIT_ACTIVE</td>
-                        <td>String</td>
-                        <td>Status do crédito (Ativo, Fechado, etc.).</td>
-                        <td>'Closed'</td>
-                    </tr>
-                    <tr>
-                        <td>DAYS_CREDIT</td>
-                        <td>Integer</td>
-                        <td>Há quantos dias o crédito foi solicitado (negativo).</td>
-                        <td>-497</td>
-                    </tr>
-                     <tr>
-                        <td>AMT_CREDIT_SUM</td>
-                        <td>Float</td>
-                        <td>Valor atual do crédito reportado pelo bureau.</td>
-                        <td>91323.0</td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
-
-            <h4 style="margin-top: 30px;">O Principal Desafio Analítico</h4>
-            <p>
-                O desafio central deste projeto reside em transformar essa estrutura complexa em um conjunto de dados único e rico em informações, agregando o comportamento histórico de cada cliente (ex: número de créditos ativos, média de dívidas passadas) para que o modelo de Machine Learning pudesse encontrar padrões preditivos de inadimplência.
-            </p>
-				  </div>
-				</div>
-				</div>
-				<div class="panel panel-default">
-				<div class="panel-heading" role="tab" id="headingFive">
-				  <h4 class="panel-title">
-					<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionExample" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-					  Análise de Qualidade e Tratamento dos Dados
-					</a>
-				  </h4>
-				</div>
-				<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-				  <div class="panel-body">
-					<p>
-                A transformação dos dados brutos em um formato de qualidade para a modelagem foi a etapa mais complexa do projeto. O processo seguiu um fluxo de diagnóstico, limpeza iterativa e enriquecimento dos dados.
-						</p>
-
-						<h4 style="margin-top: 25px;">1. Diagnóstico da Qualidade dos Dados</h4>
-						<p>A primeira etapa foi quantificar os problemas nos dados brutos. A análise revelou os seguintes pontos críticos:</p>
-						
-						<ul class="data-quality-list"> <li>
-								<strong>Completude:</strong> diversas colunas apresentavam um alto volume de dados faltantes, com algumas superando <strong>70% de valores nulos</strong>, tornando-as inviáveis para uso direto.
-							</li>
-							<li>
-								<strong>Validade:</strong> foi identificada uma anomalia na coluna <code>DAYS_EMPLOYED</code>, onde <strong>18.01% dos registros</strong> continham um valor que representava "aposentado", exigindo tratamento específico.
-							</li>
-							<li>
-								<strong>Consistência e Unicidade:</strong> a base de dados se mostrou consistente e íntegra, com <strong>0 registros</strong> apresentando inconsistência entre idade/tempo de trabalho e <strong>0 solicitações duplicadas</strong>.
-							</li>
-						</ul>
-
-						<h4 style="margin-top: 30px;">2. Limpeza e Seleção de Features (1ª Rodada)</h4>
-						<p>
-							Com base no diagnóstico, foi realizada uma primeira limpeza focada na tabela principal (<code>application_train</code>). Um modelo LightGBM preliminar foi treinado para gerar um ranking de importância das variáveis. Com base nesse ranking:
-						</p>
-						<ul class="custom-list-style">
-							<li>Foram removidas variáveis com importância igual a zero.</li>
-							<li>Foram removidas variáveis com baixa importância e alto percentual de nulos (acima de 75%).</li>
-							<li>Os valores nulos restantes foram tratados com a <strong>mediana</strong> para dados numéricos e a <strong>moda</strong> para categóricos.</li>
-						</ul>
-						<h4 style="margin-top: 30px;">3. Engenharia de Atributos (Agregação)</h4>
-						<p>
-							O passo mais crucial foi enriquecer a tabela principal com o histórico de cada cliente, consolidado a partir das 7 tabelas secundárias. Para isso, foi desenvolvida uma função genérica para agregar os dados:
-						</p>
-						
-						<pre style="background-color: #cecdcd50; color: #000000; padding: 15px; "><code>
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingObjetivos" role="tab">
+        <h4 class="panel-title">
+         <a aria-controls="collapseObjetivos" aria-expanded="false" data-toggle="collapse" href="#collapseObjetivos" role="button">
+          Objetivos do Projeto
+         </a>
+        </h4>
+       </div>
+       <div aria-labelledby="headingObjetivos" class="panel-collapse collapse collapse" id="collapseObjetivos" role="tabpanel">
+        <div class="panel-body">
+         <p>
+          O objetivo principal desta fase foi desenvolver um modelo de Machine Learning de alta acurácia para a previsão de inadimplência, alinhando metas técnicas com os objetivos de negócio de uma instituição financeira.
+         </p>
+         <br/>
+         <h4>
+          Objetivos de Negócio:
+         </h4>
+         <ul class="business-objective-list">
+          <li>
+           <strong>
+            Redução de Perdas (Loss Reduction):
+           </strong>
+           criar uma solução capaz de identificar com antecedência clientes com alto risco de inadimplência, permitindo decisões de crédito mais seguras e a redução de perdas financeiras.
+          </li>
+          <li>
+           <strong>
+            Aprovação Otimizada:
+           </strong>
+           melhorar a capacidade de diferenciar clientes bons e maus pagadores para maximizar a aprovação de crédito para clientes com baixo risco, aumentando a carteira de clientes de forma saudável.
+          </li>
+         </ul>
+         <br/>
+         <h4>
+          Objetivos Técnicos:
+         </h4>
+         <ul class="technical-objective-list">
+          <li>
+           <strong>
+            Análise Exploratória e Engenharia de Atributos:
+           </strong>
+           realizar uma investigação em um dataset complexo e multidimensional para extrair insights e construir novos atributos (features) que aumentassem o poder preditivo do modelo.
+          </li>
+          <li>
+           <strong>
+            Construção de um Modelo de Alta Performance:
+           </strong>
+           selecionar, treinar e otimizar um modelo de Machine Learning (LightGBM) para maximizar a principal métrica de avaliação, a
+           <strong>
+            AUC (Area Under the Curve)
+           </strong>
+           .
+          </li>
+          <li>
+           <strong>
+            Meta de Performance:
+           </strong>
+           com base nos benchmarks da competição original do Kaggle, onde os melhores modelos atingiram uma AUC próxima a 0.80, foi estipulada uma
+           <strong>
+            meta realista de alcançar um score entre 0.75 e 0.80
+           </strong>
+           . Este intervalo reflete um modelo de alta performance, considerando a complexidade e a qualidade inerente dos dados, que apresentam um nível significativo de ruído e dificuldade para previsões de maior acurácia.
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingTecnologias" role="tab">
+        <h4 class="panel-title">
+         <a aria-controls="collapseTecnologias" aria-expanded="false" data-toggle="collapse" href="#collapseTecnologias" role="button">
+          Tecnologias Aplicadas
+         </a>
+        </h4>
+       </div>
+       <div aria-labelledby="headingTecnologias" class="panel-collapse collapse" id="collapseTecnologias" role="tabpanel">
+        <div class="panel-body">
+         <p>
+          Para o desenvolvimento completo deste projeto, da análise de dados à aplicação web, foi utilizado o seguinte conjunto de tecnologias, bibliotecas e ferramentas:
+         </p>
+         <h4 style="margin-top: 25px;">
+          Análise e Modelagem (Stack Python)
+         </h4>
+         <ul class="list-with-bars" data-color="#2196F3">
+          <li>
+           <strong>
+            Python:
+           </strong>
+           linguagem principal para toda a análise, pré-processamento e desenvolvimento do backend.
+          </li>
+          <li>
+           <strong>
+            Pandas &amp; NumPy:
+           </strong>
+           para manipulação, limpeza e estruturação extensiva dos dados em formato de DataFrames.
+          </li>
+          <li>
+           <strong>
+            Scikit-learn:
+           </strong>
+           utilizado para pré-processamento, cálculo de métricas e implementação da validação cruzada.
+          </li>
+          <li>
+           <strong>
+            LightGBM:
+           </strong>
+           como o algoritmo de Machine Learning principal, escolhido por sua alta performance e eficiência.
+          </li>
+          <li>
+           <strong>
+            Matplotlib &amp; Seaborn:
+           </strong>
+           para a criação de visualizações e gráficos na análise exploratória.
+          </li>
+          <li>
+           <strong>
+            SHAP:
+           </strong>
+           para a etapa de explicabilidade do modelo (XAI), permitindo a interpretação das decisões.
+          </li>
+          <li>
+           <strong>
+            Jupyter Notebook:
+           </strong>
+           como ambiente principal para a análise exploratória e desenvolvimento iterativo.
+          </li>
+         </ul>
+         <h4 style="margin-top: 30px;">
+          Backend e API
+         </h4>
+         <ul class="list-with-bars" data-color="#4CAF50">
+          <li>
+           <strong>
+            Flask:
+           </strong>
+           micro-framework Python utilizado para construir a API REST que serve as previsões do modelo.
+          </li>
+          <li>
+           <strong>
+            Joblib:
+           </strong>
+           para a serialização (salvar e carregar) do pipeline de Machine Learning treinado para uso na aplicação.
+          </li>
+         </ul>
+         <h4 style="margin-top: 30px;">
+          Frontend (Interface do Simulador)
+         </h4>
+         <ul class="list-with-bars" data-color="#FFA726">
+          <li>
+           <strong>
+            HTML5 &amp; CSS3:
+           </strong>
+           para a estruturação e estilização da página e da interface da calculadora.
+          </li>
+          <li>
+           <strong>
+            JavaScript (ES6):
+           </strong>
+           para a interatividade, validação de formulários e comunicação com a API via requisições
+           <code>
+            fetch
+           </code>
+           .
+          </li>
+          <li>
+           <strong>
+            Bootstrap:
+           </strong>
+           framework CSS utilizado para criar um layout responsivo e profissional de forma ágil.
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingTwo" role="tab">
+        <h4 class="panel-title">
+         <a aria-controls="collapseTwo" aria-expanded="false" class="collapsed" data-parent="#accordionExample" data-toggle="collapse" href="#collapseTwo" role="button">
+          Dados Utilizados
+         </a>
+        </h4>
+       </div>
+       <div aria-labelledby="headingTwo" class="panel-collapse collapse" id="collapseTwo" role="tabpanel">
+        <div class="panel-body">
+         <p>
+          O dataset utilizado neste projeto é o
+          <strong>
+           "Home Credit Default Risk"
+          </strong>
+          , disponibilizado pela instituição financeira Home Credit em uma competição na plataforma Kaggle. O objetivo é desafiar cientistas de dados a prever a capacidade de pagamento de clientes, muitos dos quais possuem pouco ou nenhum histórico de crédito tradicional (a população "unbanked").
+         </p>
+         <h4>
+          Estrutura e Complexidade dos Dados
+         </h4>
+         <p>
+          A principal característica do projeto é sua estrutura relacional complexa. Para criar um perfil completo de cada cliente, foi necessário processar, agregar e unir dados de 8 tabelas interligadas, como ilustrado no diagrama abaixo.
+         </p>
+         <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
+          <img alt="Diagrama da estrutura relacional do dataset" class="img-responsive img-rounded" src="images/image_rel.png" style="margin: 0 auto;"/>
+          <p class="text-center" style="margin-top: 10px;">
+           <em>
+            Figura 1: Esquema relacional do dataset.
+           </em>
+          </p>
+         </div>
+         <h4>
+          Principais Tabelas e Colunas
+         </h4>
+         <p>
+          A seguir, uma descrição das colunas mais relevantes das duas tabelas principais utilizadas na modelagem.
+         </p>
+         <h5>
+          <strong>
+           Tabela Principal: application_train.csv
+          </strong>
+         </h5>
+         <p>
+          Contém os dados da solicitação de empréstimo e a variável-alvo. Cada linha é uma solicitação única.
+         </p>
+         <div class="table-responsive">
+          <table class="table table-striped table-bordered">
+           <thead>
+            <tr>
+             <th>
+              Campo
+             </th>
+             <th>
+              Tipo
+             </th>
+             <th>
+              Descrição
+             </th>
+             <th>
+              Exemplo
+             </th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+             <td>
+              SK_ID_CURR
+             </td>
+             <td>
+              Integer
+             </td>
+             <td>
+              ID único da solicitação de empréstimo.
+             </td>
+             <td>
+              100002
+             </td>
+            </tr>
+            <tr>
+             <td>
+              <strong>
+               TARGET
+              </strong>
+             </td>
+             <td>
+              <strong>
+               Boolean
+              </strong>
+             </td>
+             <td>
+              <strong>
+               A variável-alvo: 1 para inadimplente, 0 para adimplente.
+              </strong>
+             </td>
+             <td>
+              <strong>
+               1
+              </strong>
+             </td>
+            </tr>
+            <tr>
+             <td>
+              AMT_INCOME_TOTAL
+             </td>
+             <td>
+              Float
+             </td>
+             <td>
+              Renda mensal do cliente.
+             </td>
+             <td>
+              202500.0
+             </td>
+            </tr>
+            <tr>
+             <td>
+              AMT_CREDIT
+             </td>
+             <td>
+              Float
+             </td>
+             <td>
+              Valor total do crédito solicitado.
+             </td>
+             <td>
+              406597.5
+             </td>
+            </tr>
+            <tr>
+             <td>
+              NAME_EDUCATION_TYPE
+             </td>
+             <td>
+              String
+             </td>
+             <td>
+              Nível de escolaridade do cliente.
+             </td>
+             <td>
+              'Higher education'
+             </td>
+            </tr>
+            <tr>
+             <td>
+              DAYS_BIRTH
+             </td>
+             <td>
+              Integer
+             </td>
+             <td>
+              Idade do cliente em dias (negativo).
+             </td>
+             <td>
+              -9461
+             </td>
+            </tr>
+            <tr>
+             <td>
+              <strong>
+               EXT_SOURCE_2 / 3
+              </strong>
+             </td>
+             <td>
+              <strong>
+               Float
+              </strong>
+             </td>
+             <td>
+              <strong>
+               Scores normalizados de fontes de dados externas (cruciais para a predição).
+              </strong>
+             </td>
+             <td>
+              <strong>
+               0.262949
+              </strong>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <h5 style="margin-top: 30px;">
+          <strong>
+           Tabela Externa: bureau.csv
+          </strong>
+         </h5>
+         <p>
+          Contém informações sobre créditos anteriores do cliente em outras instituições financeiras.
+         </p>
+         <div class="table-responsive">
+          <table class="table table-striped table-bordered">
+           <thead>
+            <tr>
+             <th>
+              Campo
+             </th>
+             <th>
+              Tipo
+             </th>
+             <th>
+              Descrição
+             </th>
+             <th>
+              Exemplo
+             </th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+             <td>
+              SK_ID_CURR
+             </td>
+             <td>
+              Integer
+             </td>
+             <td>
+              ID da solicitação (chave para unir com a tabela principal).
+             </td>
+             <td>
+              215354
+             </td>
+            </tr>
+            <tr>
+             <td>
+              CREDIT_ACTIVE
+             </td>
+             <td>
+              String
+             </td>
+             <td>
+              Status do crédito (Ativo, Fechado, etc.).
+             </td>
+             <td>
+              'Closed'
+             </td>
+            </tr>
+            <tr>
+             <td>
+              DAYS_CREDIT
+             </td>
+             <td>
+              Integer
+             </td>
+             <td>
+              Há quantos dias o crédito foi solicitado (negativo).
+             </td>
+             <td>
+              -497
+             </td>
+            </tr>
+            <tr>
+             <td>
+              AMT_CREDIT_SUM
+             </td>
+             <td>
+              Float
+             </td>
+             <td>
+              Valor atual do crédito reportado pelo bureau.
+             </td>
+             <td>
+              91323.0
+             </td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <h4 style="margin-top: 30px;">
+          O Principal Desafio Analítico
+         </h4>
+         <p>
+          O desafio central deste projeto reside em transformar essa estrutura complexa em um conjunto de dados único e rico em informações, agregando o comportamento histórico de cada cliente (ex: número de créditos ativos, média de dívidas passadas) para que o modelo de Machine Learning pudesse encontrar padrões preditivos de inadimplência.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingFive" role="tab">
+        <h4 class="panel-title">
+         <a aria-controls="collapseFive" aria-expanded="false" class="collapsed" data-parent="#accordionExample" data-toggle="collapse" href="#collapseFive" role="button">
+          Análise de Qualidade e Tratamento dos Dados
+         </a>
+        </h4>
+       </div>
+       <div aria-labelledby="headingFive" class="panel-collapse collapse" id="collapseFive" role="tabpanel">
+        <div class="panel-body">
+         <p>
+          A transformação dos dados brutos em um formato de qualidade para a modelagem foi a etapa mais complexa do projeto. O processo seguiu um fluxo de diagnóstico, limpeza iterativa e enriquecimento dos dados.
+         </p>
+         <h4 style="margin-top: 25px;">
+          1. Diagnóstico da Qualidade dos Dados
+         </h4>
+         <p>
+          A primeira etapa foi quantificar os problemas nos dados brutos. A análise revelou os seguintes pontos críticos:
+         </p>
+         <ul class="data-quality-list">
+          <li>
+           <strong>
+            Completude:
+           </strong>
+           diversas colunas apresentavam um alto volume de dados faltantes, com algumas superando
+           <strong>
+            70% de valores nulos
+           </strong>
+           , tornando-as inviáveis para uso direto.
+          </li>
+          <li>
+           <strong>
+            Validade:
+           </strong>
+           foi identificada uma anomalia na coluna
+           <code>
+            DAYS_EMPLOYED
+           </code>
+           , onde
+           <strong>
+            18.01% dos registros
+           </strong>
+           continham um valor que representava "aposentado", exigindo tratamento específico.
+          </li>
+          <li>
+           <strong>
+            Consistência e Unicidade:
+           </strong>
+           a base de dados se mostrou consistente e íntegra, com
+           <strong>
+            0 registros
+           </strong>
+           apresentando inconsistência entre idade/tempo de trabalho e
+           <strong>
+            0 solicitações duplicadas
+           </strong>
+           .
+          </li>
+         </ul>
+         <h4 style="margin-top: 30px;">
+          2. Limpeza e Seleção de Features (1ª Rodada)
+         </h4>
+         <p>
+          Com base no diagnóstico, foi realizada uma primeira limpeza focada na tabela principal (
+          <code>
+           application_train
+          </code>
+          ). Um modelo LightGBM preliminar foi treinado para gerar um ranking de importância das variáveis. Com base nesse ranking:
+         </p>
+         <ul class="custom-list-style">
+          <li>
+           Foram removidas variáveis com importância igual a zero.
+          </li>
+          <li>
+           Foram removidas variáveis com baixa importância e alto percentual de nulos (acima de 75%).
+          </li>
+          <li>
+           Os valores nulos restantes foram tratados com a
+           <strong>
+            mediana
+           </strong>
+           para dados numéricos e a
+           <strong>
+            moda
+           </strong>
+           para categóricos.
+          </li>
+         </ul>
+         <h4 style="margin-top: 30px;">
+          3. Engenharia de Atributos (Agregação)
+         </h4>
+         <p>
+          O passo mais crucial foi enriquecer a tabela principal com o histórico de cada cliente, consolidado a partir das 7 tabelas secundárias. Para isso, foi desenvolvida uma função genérica para agregar os dados:
+         </p>
+         <pre style="background-color: #cecdcd50; color: #000000; padding: 15px; "><code>
 			<span style="color: #075800;"># O núcleo da lógica de agregação</span>
 			bureau_agg = bureau.groupby('SK_ID_CURR').agg({
 				'DAYS_CREDIT': ['mean', 'max', 'min'],
@@ -598,45 +1182,60 @@
 			})
 			bureau_agg.columns = ['BUREAU_' + '_'.join(col).upper() <span style="color: #f92672;">for</span> col <span style="color: #f92672;">in</span> bureau_agg.columns.ravel()]
 						</code></pre>
-						<p>
-							Essa estratégia foi aplicada em um loop para processar e unir todas as tabelas secundárias, criando centenas de novas features preditivas (ex: média de dívidas, número de empréstimos anteriores, etc.).
-						</p>
-
-						<h4 style="margin-top: 30px;">4. Limpeza e Refinamento Final (2ª Rodada)</h4>
-						<p>
-							Após a junção de todas as tabelas, o dataset final continha 358 colunas. Um novo processo de seleção de features foi realizado neste dataset enriquecido para remover variáveis redundantes ou com baixo poder preditivo, resultando em um conjunto de dados final contendo 237 variáveis, otimizado para o treinamento.
-						</p>
-				  </div>
-				</div>
-				</div>
-				<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTreinamento">
+         <p>
+          Essa estratégia foi aplicada em um loop para processar e unir todas as tabelas secundárias, criando centenas de novas features preditivas (ex: média de dívidas, número de empréstimos anteriores, etc.).
+         </p>
+         <h4 style="margin-top: 30px;">
+          4. Limpeza e Refinamento Final (2ª Rodada)
+         </h4>
+         <p>
+          Após a junção de todas as tabelas, o dataset final continha 358 colunas. Um novo processo de seleção de features foi realizado neste dataset enriquecido para remover variáveis redundantes ou com baixo poder preditivo, resultando em um conjunto de dados final contendo 237 variáveis, otimizado para o treinamento.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingTreinamento" role="tab">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#collapseTreinamento" aria-expanded="false" aria-controls="collapseTreinamento">
-                Treinamento do Modelo
-            </a>
+         <a aria-controls="collapseTreinamento" aria-expanded="false" data-toggle="collapse" href="#collapseTreinamento" role="button">
+          Treinamento do Modelo
+         </a>
         </h4>
-    </div>
-    <div id="collapseTreinamento" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTreinamento">
+       </div>
+       <div aria-labelledby="headingTreinamento" class="panel-collapse collapse" id="collapseTreinamento" role="tabpanel">
         <div class="panel-body">
-            <p>
-                Esta foi minha primeira experiência prática construindo um projeto de Machine Learning do início ao fim. O objetivo desta etapa foi aplicar os conhecimentos teóricos em um desafio complexo do mundo real, focando em tomar as melhores decisões possíveis com as ferramentas e o conhecimento que eu estava adquirindo ao longo do processo.
-            </p>
-
-            <h4 style="margin-top: 25px;">1. Escolha do Algoritmo e Desafios de Implementação</h4>
-            <p>
-                Após pesquisar sobre os algoritmos mais performáticos para dados tabulares, a escolhi o <strong>Light Gradient Boosting Machine (LightGBM)</strong>. O treinamento prático revelou desafios. A seguir, os principais aprendizados e as soluções aplicadas:
-            </p>
-            <ul class="list-with-bars" data-color="#FFA726">
-                <li>
-                    <strong>Desbalanceamento de Classes:</strong> um dos primeiros desafios práticos encontrados foi o forte desbalanceamento entre adimplentes e inadimplentes no dataset. Para evitar que o modelo se tornasse enviesado, estudei e apliquei o hiperparâmetro <code>scale_pos_weight</code>, que atribui um peso maior aos exemplos da classe minoritária.
-                </li>
-                <li>
-                    <strong>Otimização de Hiperparâmetros:</strong> como este era meu primeiro projeto de ponta a ponta, a otimização de hiperparâmetros foi feita de forma manual e iterativa. Embora existam técnicas mais avançadas e automatizadas (como Optuna), que pretendo explorar em projetos futuros, a otimização realizada foi fundamental para o ganho de performance e para um entendimento mais profundo de como os parâmetros afetam o modelo.
-                </li>
-            </ul>
-
-             <pre style="background-color: #cecdcd50; color: #000000; padding: 15px; margin-top: 15px;"><code>
+         <p>
+          Esta foi minha primeira experiência prática construindo um projeto de Machine Learning do início ao fim. O objetivo desta etapa foi aplicar os conhecimentos teóricos em um desafio complexo do mundo real, focando em tomar as melhores decisões possíveis com as ferramentas e o conhecimento que eu estava adquirindo ao longo do processo.
+         </p>
+         <h4 style="margin-top: 25px;">
+          1. Escolha do Algoritmo e Desafios de Implementação
+         </h4>
+         <p>
+          Após pesquisar sobre os algoritmos mais performáticos para dados tabulares, a escolhi o
+          <strong>
+           Light Gradient Boosting Machine (LightGBM)
+          </strong>
+          . O treinamento prático revelou desafios. A seguir, os principais aprendizados e as soluções aplicadas:
+         </p>
+         <ul class="list-with-bars" data-color="#FFA726">
+          <li>
+           <strong>
+            Desbalanceamento de Classes:
+           </strong>
+           um dos primeiros desafios práticos encontrados foi o forte desbalanceamento entre adimplentes e inadimplentes no dataset. Para evitar que o modelo se tornasse enviesado, estudei e apliquei o hiperparâmetro
+           <code>
+            scale_pos_weight
+           </code>
+           , que atribui um peso maior aos exemplos da classe minoritária.
+          </li>
+          <li>
+           <strong>
+            Otimização de Hiperparâmetros:
+           </strong>
+           como este era meu primeiro projeto de ponta a ponta, a otimização de hiperparâmetros foi feita de forma manual e iterativa. Embora existam técnicas mais avançadas e automatizadas (como Optuna), que pretendo explorar em projetos futuros, a otimização realizada foi fundamental para o ganho de performance e para um entendimento mais profundo de como os parâmetros afetam o modelo.
+          </li>
+         </ul>
+         <pre style="background-color: #cecdcd50; color: #000000; padding: 15px; margin-top: 15px;"><code>
 <span style="color: #075800;"># Definição dos parâmetros otimizados e peso de classe</span>
 params = {
     'objective': 'binary', 'metric': 'auc', 'boosting_type': 'gbdt',
@@ -648,21 +1247,35 @@ target_counts = ytrain.value_counts()
 scale_pos_weight = target_counts[0] / target_counts[1]
 params['scale_pos_weight'] = scale_pos_weight
             </code></pre>
-
-            <h4 style="margin-top: 30px;">2. Estratégia de Validação e Treinamento Final</h4>
-            <p>
-                Para garantir uma avaliação robusta e um treinamento eficaz, foram empregadas duas estratégias distintas em momentos diferentes do projeto:
-            </p>
-            <ul class="list-with-bars" data-color="#4CAF50">
-                <li>
-                    <strong>Validação Cruzada (Durante a Análise):</strong> nas fases de exploração e seleção de features, a <strong>Validação Cruzada com 5 folds</strong> foi utilizada. Este método forneceu uma estimativa de performance (AUC) muito estável e confiável, sendo crucial para tomar decisões sobre quais features manter ou remover.
-                </li>
-                <li>
-                    <strong>Treinamento Final (Divisão Treino/Validação):</strong> após a finalização do pré-processamento, o modelo definitivo foi treinado no conjunto de treino (80% dos dados) e monitorado em um conjunto de validação (20%) com a técnica de <strong>Early Stopping</strong>, que interrompe o treinamento quando a performance para de melhorar, evitando o superajuste e garantindo a melhor performance do modelo final.
-                </li>
-            </ul>
-            
-            <pre style="background-color: #cecdcd50; color: #000000; padding: 15px; margin-top: 15px;"><code>
+         <h4 style="margin-top: 30px;">
+          2. Estratégia de Validação e Treinamento Final
+         </h4>
+         <p>
+          Para garantir uma avaliação robusta e um treinamento eficaz, foram empregadas duas estratégias distintas em momentos diferentes do projeto:
+         </p>
+         <ul class="list-with-bars" data-color="#4CAF50">
+          <li>
+           <strong>
+            Validação Cruzada (Durante a Análise):
+           </strong>
+           nas fases de exploração e seleção de features, a
+           <strong>
+            Validação Cruzada com 5 folds
+           </strong>
+           foi utilizada. Este método forneceu uma estimativa de performance (AUC) muito estável e confiável, sendo crucial para tomar decisões sobre quais features manter ou remover.
+          </li>
+          <li>
+           <strong>
+            Treinamento Final (Divisão Treino/Validação):
+           </strong>
+           após a finalização do pré-processamento, o modelo definitivo foi treinado no conjunto de treino (80% dos dados) e monitorado em um conjunto de validação (20%) com a técnica de
+           <strong>
+            Early Stopping
+           </strong>
+           , que interrompe o treinamento quando a performance para de melhorar, evitando o superajuste e garantindo a melhor performance do modelo final.
+          </li>
+         </ul>
+         <pre style="background-color: #cecdcd50; color: #000000; padding: 15px; margin-top: 15px;"><code>
 <span style="color: #0603b3;"># Separando 20% dos dados para validação e early stopping</span>
 xtrain, xval, ytrain, yval = train_test_split(
     tabela_treino_final, y, test_size=0.2, random_state=42, stratify=y
@@ -678,522 +1291,840 @@ model.fit(
 )
             </code></pre>
         </div>
-    </div>
-</div>
-				<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingResultados">
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingResultados" role="tab">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#collapseResultados" aria-expanded="false" aria-controls="collapseResultados">
-                Resultados e Interpretabilidade do Modelo
-            </a>
+         <a aria-controls="collapseResultados" aria-expanded="false" data-toggle="collapse" href="#collapseResultados" role="button">
+          Resultados e Interpretabilidade do Modelo
+         </a>
         </h4>
-    </div>
-    <div id="collapseResultados" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingResultados">
+       </div>
+       <div aria-labelledby="headingResultados" class="panel-collapse collapse" id="collapseResultados" role="tabpanel">
         <div class="panel-body">
-            <p>
-                Após as etapas de pré-processamento e treinamento, o modelo final foi avaliado para aferir sua performance e, mais importante, para entender e interpretar suas decisões.
-            </p>
-
-            <h4 style="margin-top: 25px;">1. Performance do Modelo</h4>
-            <p>
-                A performance do modelo foi aferida com duas estratégias complementares para garantir a robustez e a consistência dos resultados. A métrica principal utilizada foi a <strong>AUC (Area Under the Curve)</strong>.
-            </p>
-            <ul class="list-with-bars" data-color="#28a745"> <li>
-                    <strong>Estimativa Robusta com Validação Cruzada:</strong> para obter uma estimativa confiável da capacidade de generalização do modelo, foi utilizada a Validação Cruzada com 5 folds. O resultado foi uma <strong>AUC média de 0.7725</strong>, um score estável que superou a meta inicial do projeto.
-                </li>
-                <li>
-                    <strong>Performance do Modelo Final:</strong> confirmando este resultado, o modelo definitivo treinado com Early Stopping alcançou uma <strong>AUC de 0.7756</strong> no conjunto de dados de validação, demonstrando a consistência da performance.
-                </li>
-            </ul>
-            <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
-                <img src="images/treinamento_final.png" class="img-responsive img-rounded" alt="Resultado do treinamento final no conjunto de validação" style="margin: 0 auto; border: 1px solid #ddd;">
-                <p class="text-center" style="margin-top: 10px;"><em>Figura 2: performance do modelo final no conjunto de validação.</em></p>
-            </div>
-
-
-            <h4 style="margin-top: 30px;">2. Variáveis Mais Importantes (Feature Importance)</h4>
-            <p>
-                A análise da importância das features revelou quais fatores o modelo final mais utilizou para tomar suas decisões. Conforme esperado, as variáveis de scores externos e informações demográficas se mostraram as mais influentes.
-            </p>
-             <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
-                <img src="images/feature_importances.png" class="img-responsive img-rounded" alt="Gráfico com as 50 variáveis mais importantes para o modelo" style="margin: 0 auto; border: 1px solid #ddd;">
-                <p class="text-center" style="margin-top: 10px;"><em>Figura 3: ranking das 50 features com maior poder preditivo no modelo final.</em></p>
-            </div>
-
-            <h4 style="margin-top: 30px;">3. Explicabilidade do Modelo com SHAP (XAI)</h4>
-            <p>
-                Para ir além da importância geral e entender como cada variável impacta a previsão, foi utilizada a biblioteca <strong>SHAP (SHapley Additive exPlanations)</strong>. Esta técnica de IA Explicável (XAI) permite "abrir a caixa-preta" do modelo.
-            </p>
-            
-            <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
-                <img src="images/shap_final.png" class="img-responsive img-rounded" alt="Gráfico de resumo do SHAP para o modelo" style="margin: 0 auto; border: 1px solid #ddd;">
-                <p class="text-center" style="margin-top: 10px;"><em>Figura 4: SHAP Summary Plot, mostrando o impacto de cada feature nas previsões.</em></p>
-            </div>
-
-            <p><strong>Principais Insights do SHAP:</strong></p>
-            <ul class="list-with-bars" data-color="#6f42c1"> <li>
-                    <strong>EXT_SOURCE_2 e 3:</strong> confirmam-se como as variáveis mais importantes. Valores <strong>altos</strong> (vermelho) empurram a previsão para a esquerda, diminuindo o risco (melhores scores externos = menor risco).
-                </li>
-                 <li>
-                    <strong>DAYS_EMPLOYED:</strong> valores <strong>altos</strong> (vermelho, indicando pouco tempo de emprego) tendem a empurrar a previsão para a direita, aumentando o risco. Clientes com mais tempo de emprego (azul) apresentam menor risco.
-                </li>
-            </ul>
-
+         <p>
+          Após as etapas de pré-processamento e treinamento, o modelo final foi avaliado para aferir sua performance e, mais importante, para entender e interpretar suas decisões.
+         </p>
+         <h4 style="margin-top: 25px;">
+          1. Performance do Modelo
+         </h4>
+         <p>
+          A performance do modelo foi aferida com duas estratégias complementares para garantir a robustez e a consistência dos resultados. A métrica principal utilizada foi a
+          <strong>
+           AUC (Area Under the Curve)
+          </strong>
+          .
+         </p>
+         <ul class="list-with-bars" data-color="#28a745">
+          <li>
+           <strong>
+            Estimativa Robusta com Validação Cruzada:
+           </strong>
+           para obter uma estimativa confiável da capacidade de generalização do modelo, foi utilizada a Validação Cruzada com 5 folds. O resultado foi uma
+           <strong>
+            AUC média de 0.7725
+           </strong>
+           , um score estável que superou a meta inicial do projeto.
+          </li>
+          <li>
+           <strong>
+            Performance do Modelo Final:
+           </strong>
+           confirmando este resultado, o modelo definitivo treinado com Early Stopping alcançou uma
+           <strong>
+            AUC de 0.7756
+           </strong>
+           no conjunto de dados de validação, demonstrando a consistência da performance.
+          </li>
+         </ul>
+         <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
+          <img alt="Resultado do treinamento final no conjunto de validação" class="img-responsive img-rounded" src="images/treinamento_final.png" style="margin: 0 auto; border: 1px solid #ddd;"/>
+          <p class="text-center" style="margin-top: 10px;">
+           <em>
+            Figura 2: performance do modelo final no conjunto de validação.
+           </em>
+          </p>
+         </div>
+         <h4 style="margin-top: 30px;">
+          2. Variáveis Mais Importantes (Feature Importance)
+         </h4>
+         <p>
+          A análise da importância das features revelou quais fatores o modelo final mais utilizou para tomar suas decisões. Conforme esperado, as variáveis de scores externos e informações demográficas se mostraram as mais influentes.
+         </p>
+         <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
+          <img alt="Gráfico com as 50 variáveis mais importantes para o modelo" class="img-responsive img-rounded" src="images/feature_importances.png" style="margin: 0 auto; border: 1px solid #ddd;"/>
+          <p class="text-center" style="margin-top: 10px;">
+           <em>
+            Figura 3: ranking das 50 features com maior poder preditivo no modelo final.
+           </em>
+          </p>
+         </div>
+         <h4 style="margin-top: 30px;">
+          3. Explicabilidade do Modelo com SHAP (XAI)
+         </h4>
+         <p>
+          Para ir além da importância geral e entender como cada variável impacta a previsão, foi utilizada a biblioteca
+          <strong>
+           SHAP (SHapley Additive exPlanations)
+          </strong>
+          . Esta técnica de IA Explicável (XAI) permite "abrir a caixa-preta" do modelo.
+         </p>
+         <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
+          <img alt="Gráfico de resumo do SHAP para o modelo" class="img-responsive img-rounded" src="images/shap_final.png" style="margin: 0 auto; border: 1px solid #ddd;"/>
+          <p class="text-center" style="margin-top: 10px;">
+           <em>
+            Figura 4: SHAP Summary Plot, mostrando o impacto de cada feature nas previsões.
+           </em>
+          </p>
+         </div>
+         <p>
+          <strong>
+           Principais Insights do SHAP:
+          </strong>
+         </p>
+         <ul class="list-with-bars" data-color="#6f42c1">
+          <li>
+           <strong>
+            EXT_SOURCE_2 e 3:
+           </strong>
+           confirmam-se como as variáveis mais importantes. Valores
+           <strong>
+            altos
+           </strong>
+           (vermelho) empurram a previsão para a esquerda, diminuindo o risco (melhores scores externos = menor risco).
+          </li>
+          <li>
+           <strong>
+            DAYS_EMPLOYED:
+           </strong>
+           valores
+           <strong>
+            altos
+           </strong>
+           (vermelho, indicando pouco tempo de emprego) tendem a empurrar a previsão para a direita, aumentando o risco. Clientes com mais tempo de emprego (azul) apresentam menor risco.
+          </li>
+         </ul>
         </div>
-    </div>
-</div>
-
-
-				<h2>Parte 2: O Modelo Simplificado e a Calculadora</h2>
-				<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingResumoParte2">
+       </div>
+      </div>
+      <h2>
+       Parte 2: O Modelo Simplificado e a Calculadora
+      </h2>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingResumoParte2" role="tab">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#collapseResumoParte2" aria-expanded="true" aria-controls="collapseResumoParte2">
-                RESUMO - Visão Geral da Parte 2: Da Análise ao Produto
-            </a>
+         <a aria-controls="collapseResumoParte2" aria-expanded="true" data-toggle="collapse" href="#collapseResumoParte2" role="button">
+          RESUMO - Visão Geral da Parte 2: Da Análise ao Produto
+         </a>
         </h4>
-    </div>
-    <div id="collapseResumoParte2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingResumoParte2">
+       </div>
+       <div aria-labelledby="headingResumoParte2" class="panel-collapse collapse in" id="collapseResumoParte2" role="tabpanel">
         <div class="panel-body">
-            
-            <div class="row summary-row">
-
-                <div class="col-md-4 col-sm-6 summary-card-wrapper">
-                    <div class="summary-card-item">
-                        <div class="summary-card-header">
-                            <i class="fas fa-puzzle-piece summary-card-icon" style="color: #007bff;"></i>
-                            <h5 class="summary-card-title">O Desafio</h5>
-                        </div>
-                        <div class="summary-card-content">
-                            <p>
-                                Traduzir o modelo analítico complexo (Parte 1) para uma aplicação web prática, usando apenas os <strong>14 campos de um formulário</strong>, sem perder a confiabilidade.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 summary-card-wrapper">
-                    <div class="summary-card-item">
-                        <div class="summary-card-header">
-                            <i class="fas fa-search-plus summary-card-icon" style="color: #dc3545;"></i>
-                            <h5 class="summary-card-title">Diagnóstico de Falhas</h5>
-                        </div>
-                        <div class="summary-card-content">
-                            <p>
-                                O modelo simplificado, embora estatisticamente aceitável, apresentou <strong>falhas lógicas graves</strong> em testes de sanidade, gerando previsões inconsistentes para perfis extremos.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 summary-card-wrapper">
-                    <div class="summary-card-item">
-                        <div class="summary-card-header">
-                            <i class="fas fa-shield-alt summary-card-icon" style="color: #28a745;"></i>
-                            <h5 class="summary-card-title">A Solução</h5>
-                        </div>
-                        <div class="summary-card-content">
-                            <p>
-                                Foi projetada uma <strong>arquitetura híbrida</strong>, combinando um <strong>Scorecard de Regras de Negócio</strong> (para casos óbvios) com o <strong>modelo de Machine Learning</strong> (para a "zona cinzenta").
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-sm-6 summary-card-wrapper">
-                    <div class="summary-card-item">
-                        <div class="summary-card-header">
-                            <i class="fas fa-vial summary-card-icon" style="color: #ffc107;"></i>
-                            <h5 class="summary-card-title">Validação</h5>
-                        </div>
-                        <div class="summary-card-content">
-                            <p>
-                                O sistema híbrido foi validado com os mesmos testes de sanidade, provando ser <strong>100% eficaz</strong> em corrigir as inconsistências lógicas do modelo simplificado.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-sm-6 summary-card-wrapper">
-                    <div class="summary-card-item">
-                        <div class="summary-card-header">
-                            <i class="fas fa-lightbulb summary-card-icon" style="color: #17a2b8;"></i>
-                            <h5 class="summary-card-title">Considerações Finais</h5>
-                        </div>
-                        <div class="summary-card-content">
-                            <p>
-                                O projeto demonstrou a importância de unir a ciência de dados com a engenharia de software para criar <strong>produtos de dados robustos</strong>, confiáveis e prontos para o mundo real.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+         <div class="row summary-row">
+          <div class="col-md-4 col-sm-6 summary-card-wrapper">
+           <div class="summary-card-item">
+            <div class="summary-card-header">
+             <i class="fas fa-puzzle-piece summary-card-icon" style="color: #007bff;">
+             </i>
+             <h5 class="summary-card-title">
+              O Desafio
+             </h5>
             </div>
-        </div>
-    </div>
-</div>
-	<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingSimplificacao">
-        <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#collapseSimplificacao" aria-expanded="false" aria-controls="collapseSimplificacao">
-                O Desafio da Simplificação
-            </a>
-        </h4>
-    </div>
-    <div id="collapseSimplificacao" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSimplificacao">
-        <div class="panel-body">
-            <p>
-                O modelo analítico da Parte 1, apesar de sua alta performance (AUC 0.77+), foi construído em um ambiente de laboratório com acesso a um vasto histórico de dados do cliente, com mais de 230 variáveis. O desafio prático surgiu ao tentar traduzir essa análise para o simulador web interativo, que precisa dar uma resposta em tempo real para um <strong>novo cliente</strong>.
-            </p>
-            <p>
-                Isso criou uma lacuna de dados, pois o modelo analítico dependia de informações que não estão disponíveis no momento do preenchimento.
-            </p>
-
-            <h5 style="margin-top: 25px; font-weight: bold;">Principais Impedimentos do Modelo Complexo:</h5>
-            <ul class="list-with-bars" data-color="#fd7e14"> <li>
-                    <strong>Dependência de Dados Externos:</strong> as features mais importantes do modelo, como <code>EXT_SOURCE_2</code> e <code>EXT_SOURCE_3</code>, são scores de crédito externos que não existem para um novo solicitante.
-                </li>
-                <li>
-                    <strong>Histórico Inexistente:</strong> muitas das features mais preditivas foram criadas a partir da agregação do histórico de pagamentos e empréstimos anteriores do cliente, informações que, por definição, um novo cliente não possui.
-                </li>
-                <li>
-                    <strong>Latência e Custo Computacional:</strong> um modelo com mais de 230 features, que exige a consulta e agregação de 8 tabelas, é muito lento e caro para operar em tempo real em uma aplicação web.
-                </li>
-            </ul>
-
-            <h4 style="margin-top: 30px;">A Decisão Estratégica</h4>
-            <p>
-                Ficou claro que era necessário construir um novo modelo, <strong>muito mais simples</strong>, treinado para operar sob as restrições do mundo real. Este novo modelo seria treinado utilizando exclusivamente as <strong>14 variáveis</strong>, presentes na calculadora, que um cliente pode fornecer através do formulário.
-            </p>
+            <div class="summary-card-content">
              <p>
-                Com essas premissas, um novo modelo LightGBM foi treinado. Esse novo modelo era menos performático (AUC ~0.68), mas era uma solução viável para o simulador web. Além disso, o modelo simplificado apresentou novos problemas que trataremos a seguir.
-        </div>
-    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingDiagnostico">
-        <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#collapseDiagnostico" aria-expanded="false" aria-controls="collapseDiagnostico">
-                Diagnóstico de Falhas do Modelo Simplificado
-            </a>
-        </h4>
-		
-    </div>
-	
-    <div id="collapseDiagnostico" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDiagnostico">
-        <div class="panel-body">
-			<p>
-                Após treinar um modelo de Machine Learning usando apenas as 14 variáveis disponíveis no formulário, o primeiro passo foi avaliar sua performance. As métricas estatísticas, como a <strong>AUC de 0.68</strong>, indicavam um modelo razoável.
-            </p>
-            <p>
-                No entanto, a verdadeira prova de um modelo destinado a uma aplicação real não está apenas em suas métricas, mas em seu comportamento em cenários práticos e, por vezes, extremos. Para validar a coerência e o "bom senso" do modelo, foram criados diversos perfis de teste simulando clientes com características muito específicas (como rendas muito altas, endividamento extremo, etc.).
-            </p>
-            <p>
-                Foi durante essa fase de testes de sanidade que <strong>falhas lógicas graves foram descobertas</strong>. O modelo, por ser uma "caixa-preta" focada em padrões estatísticos, não conseguia aplicar regras de negócio óbvias, resultando em previsões inconsistentes e, em alguns casos, absurdas. Ficou claro que, para um produto de dados confiável, um modelo de Machine Learning puro não seria suficiente.
-            </p>
-            <p>
-                O carrossel abaixo demonstra, com exemplos práticos, algumas das inconsistências mais críticas encontradas, comparando o comportamento ilógico do modelo simplificado com a resposta correta do sistema híbrido final.
-            </p><br>
-
-            <div id="diagnosticoCarousel" class="carousel slide diagnostico-carousel" data-ride="carousel" data-interval="false">
-                <ol class="carousel-indicators">
-                    <li data-target="#diagnosticoCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#diagnosticoCarousel" data-slide-to="1"></li>
-                    <li data-target="#diagnosticoCarousel" data-slide-to="2"></li>
-                </ol>
-
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <div class="text-center" style="margin-bottom: 20px;">
-                            <h4>Caso 1: Perfil de Baixíssimo Risco (Milionário)</h4>
-                            <p>Simulação de um cliente com renda altíssima solicitando um empréstimo de valor irrisório.</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6 text-center">
-                                <h5>Antes: Modelo Simplificado (ML Puro)</h5>
-                                <figure>
-                                    <img src="images/antes_irrisorio.png" class="img-responsive img-rounded" alt="Resultado inconsistente" style="border: 1px solid #ddd;">
-                                    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;"><em>Resultado: score mediano. Nesse caso, o mais lógico seria conceder crédito imediatamente, dada a renda do cliente em comparaçao ao valor ínfimo das parcelas e do empréstimo.</em></figcaption>
-                                </figure>
-                            </div>
-                            <div class="col-sm-6 text-center">
-                                <h5>Depois: Sistema Híbrido</h5>
-                                <figure>
-                                    <img src="images/depois_irrisorio.png" class="img-responsive img-rounded" alt="Resultado correto" style="border: 1px solid #ddd;">
-                                    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;"><em>Resultado correto: score altíssimo. Após a implementação da arquitetura híbrida, o resultado do score ficou coerente.</em></figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="text-center" style="margin-bottom: 20px;">
-                            <h4>Caso 2: Perfil de Alto Risco (Superendividado)</h4>
-                            <p>Simulação de um cliente cuja parcela do empréstimo compromete 75% de sua renda mensal.</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6 text-center">
-                                <h5>Antes: Modelo Simplificado (ML Puro)</h5>
-                                <figure>
-                                    <img src="images/antes_endividado.png" class="img-responsive img-rounded" alt="Resultado inconsistente" style="border: 1px solid #ddd;">
-                                    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;"><em>Resultado ilógico: nesse caso, um cliente cuja renda ficasse comprometida em 75% por conta do empréstimo, jamais deveria receber um score tão alto.</em></figcaption>
-                                </figure>
-                            </div>
-                            <div class="col-sm-6 text-center">
-                                <h5>Depois: Sistema Híbrido</h5>
-                                <figure>
-                                    <img src="images/depois_endividado.png" class="img-responsive img-rounded" alt="Resultado correto" style="border: 1px solid #ddd;">
-                                    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;"><em>Resultado correto: após a implementação da arquitetura híbrida, foi estabelecido que, caso as parcelas comprometessem a renda do cliente em mais de 60%, seu score seria baixo, para evitar riscos.</em></figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="text-center" style="margin-bottom: 20px;">
-                            <h4>Caso 3: Perfil Seguro </h4>
-                            <p>Simulação de um cliente com um perfil seguro.</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6 text-center">
-                                <h5>Antes: Modelo Simplificado (ML Puro)</h5>
-                                <figure>
-                                    <img src="images/antes_seguro.png" class="img-responsive img-rounded" alt="Resultado inconsistente" style="border: 1px solid #ddd;">
-                                    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;"><em>Resultado ilógico: o perfil desse cliente pode ser visto como seguro, pois além das parcelas não comprometerem grande parte da renda, suas características socioeconômicas passam certa "segurança".</em></figcaption>
-                                </figure>
-                            </div>
-                            <div class="col-sm-6 text-center">
-                                <h5>Depois: Sistema Híbrido</h5>
-                                <figure>
-                                    <img src="images/depois_seguro2.png" class="img-responsive img-rounded" alt="Resultado correto" style="border: 1px solid #ddd;">
-                                    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;"><em>Resultado correto: o perfil desse cliente não apresenta alto risco.</em></figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <a class="left carousel-control" href="#diagnosticoCarousel" role="button" data-slide="prev">
-                    <i class="fas fa-chevron-left"></i>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#diagnosticoCarousel" role="button" data-slide="next">
-                    <i class="fas fa-chevron-right"></i>
-                    <span class="sr-only">Next</span>
-                </a>
+              Traduzir o modelo analítico complexo (Parte 1) para uma aplicação web prática, usando apenas os
+              <strong>
+               14 campos de um formulário
+              </strong>
+              , sem perder a confiabilidade.
+             </p>
             </div>
+           </div>
+          </div>
+          <div class="col-md-4 col-sm-6 summary-card-wrapper">
+           <div class="summary-card-item">
+            <div class="summary-card-header">
+             <i class="fas fa-search-plus summary-card-icon" style="color: #dc3545;">
+             </i>
+             <h5 class="summary-card-title">
+              Diagnóstico de Falhas
+             </h5>
             </div>
-    </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingSolucao">
-        <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#collapseSolucao" aria-expanded="false" aria-controls="collapseSolucao">
-                A Solução: Arquitetura Híbrida (Regras + Machine Learning)
-            </a>
-        </h4>
-    </div>
-    <div id="collapseSolucao" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSolucao">
-        <div class="panel-body">
-            <p>
-                Diante das falhas lógicas do modelo simplificado, a solução foi projetar uma <strong>arquitetura de decisão em duas camadas</strong>, que combina regras de negócio com o poder preditivo do Machine Learning.
-            </p>
-
-            <h4 style="margin-top: 25px;">Fluxo de Decisão do Sistema Híbrido</h4>
-            
-            <div class="flowchart-detailed" style="margin-top: 20px;">
-                <div class="step">1. [Entrada de Dados do Cliente]</div>
-                <div class="arrow">↓</div>
-                <div class="scorecard-details">
-                    <h5>Camada 1: Scorecard de Regras</h5>
-                    <strong>Score Inicial = 500</strong>
-                    <ul>
-                        <li class="penalty">-400 pts se Parcela/Renda > 60%</li>
-                        <li class="penalty">-150 pts se Idade < 22 anos</li>
-                        <li class="bonus">+300 pts se Crédito <= R$ 1.000</li>
-                    </ul>
-                </div>
-                <div class="arrow">↓</div>
-                <div class="step decision-box">2. Score de Regras está nas Zonas de Veto?</div>
-                
-                <div class="row">
-                    <div class="col-xs-6 text-center">
-                        <div class="path-label text-danger">↳ SIM (Score &lt; 400 ou &gt; 650)</div>
-                        <div class="arrow">↓</div>
-                        <div class="step">3a. <strong>Camada 1:</strong> traduz o score de regras em uma <strong>probabilidade final</strong>.</div>
-                    </div>
-                    <div class="col-xs-6 text-center">
-                        <div class="path-label text-success">↳ NÃO (Zona Cinzenta)</div>
-                        <div class="arrow">↓</div>
-                        <div class="step">3b. <strong>Camada 2: modelo ML</strong> calcula a probabilidade.</div>
-                    </div>
-                </div>
-                
-                <div class="arrow">↓</div>
-                
-                <div class="result-box">4. Converte a <strong>probabilidade final</strong> em um Score (100-1000)</div>
-            </div>
-
-            <h4 style="margin-top: 30px;">Detalhes das Camadas</h4>
-            <ul class="list-with-bars" data-color="#28a745">
-                 <li>
-                    <strong>Camada 1: O Scorecard de Veto:</strong> um sistema de pontos que analisa regras de negócio. Se o score final cai em uma "zona de veto", a decisão é tomada imediatamente.
-                </li>
-                <li>
-                    <strong>Camada 2: O Modelo de ML na "Zona Cinzenta":</strong> apenas os perfis que não são "preto no branco" são passados para o modelo LightGBM, que usa sua força para analisar as interações sutis entre as variáveis em cenários complexos.
-                </li>
-            </ul>
-            
-            <hr>
-            <h4 style="margin-top: 30px;">A Lógica por Trás das Fórmulas e Limites</h4>
-            <p>
-                Os valores numéricos do sistema (limites, pesos e fórmulas) não foram gerados pelo modelo de ML, mas sim definidos manualmente. Para criar as fórmulas, combinei os insights da minha própria análise de dados e utilizei uma IA como ferramenta de apoio para refinar e calibrar os valores finais, inserindo lógicas de negócio consistentes com o mercado e, por fim, realizei testes de sanidade para determinar se os resultados estavam satisfatórios e coerentes.
-            </p>
-            <ul class="list-with-bars" data-color="#6f42c1"> <li>
-                    <strong>As Zonas de Veto (< 400 e > 650):</strong> foram calibradas para serem conservadoras. Os pesos das regras (ex: <strong>-400</strong> para renda comprometida) foram definidos para garantir que perfis de teste extremos (como o "superendividado") fossem sempre capturados por essa camada de segurança.
-                </li>
-                <li>
-                    <strong>Fórmula para Risco Alto (Score < 400):</strong> a fórmula <code>prob = 0.75 + (400 - score) / 1000.0</code> foi criada para estabelecer uma base de <strong>75% de risco</strong>, que aumenta progressivamente quanto pior for o score de regras. Isso garante que a recusa seja sempre decisiva.
-                </li>
-                <li>
-                    <strong>Fórmula para Risco Baixo (Score > 650):</strong> da mesma forma, a fórmula <code>prob = 0.10 - (score - 650) / 1000.0</code> estabelece uma base de apenas <strong>10% de risco</strong>, que diminui ainda mais quanto melhor for o perfil. Isso garante uma pré-aprovação com alta confiança.
-                </li>
-            </ul>
-
-        </div>
-    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingValidacao">
-        <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#collapseValidacao" aria-expanded="false" aria-controls="collapseValidacao">
-                Validação e Testes de Coerência
-            </a>
-        </h4>
-    </div>
-    <div id="collapseValidacao" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingValidacao">
-        <div class="panel-body">
-            <p>
-                Após o desenvolvimento da arquitetura híbrida, foi crucial conduzir uma fase de validação para garantir que as falhas de coerência haviam sido eliminadas de forma definitiva. O objetivo não era apenas corrigir os exemplos específicos, mas garantir a robustez geral do sistema.
-            </p>
-            
-            <h4 style="margin-top: 25px;">Metodologia de Testes</h4>
-            <p>
-                Foi criada uma suíte de testes de sanidade composta por diversos "perfis arquetípicos". Cada perfil foi desenhado para testar um limite específico da lógica de negócio, simulando cenários extremos que o modelo simplificado não conseguiu tratar corretamente. A performance do sistema híbrido foi então comparada com a do modelo ML puro para cada caso.
-            </p>
-
-            <h4 style="margin-top: 30px;">Conclusão da Validação</h4>
-            <p>
-                A suíte de testes confirmou que <strong>a arquitetura híbrida foi eficaz em resolver as falhas de coerência</strong> do modelo simplificado. O sistema final demonstrou ser não apenas preditivo para os casos complexos, mas também seguro, robusto e alinhado com a lógica de negócio para os casos extremos.
-            </p>
-        </div>
-    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingConsideracoes">
-        <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#collapseConsideracoes" aria-expanded="false" aria-controls="collapseConsideracoes">
-                Considerações Finais e Próximos Passos
-            </a>
-        </h4>
-    </div>
-    <div id="collapseConsideracoes" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingConsideracoes">
-        <div class="panel-body">
-            <p>
-                Este projeto representou uma jornada completa pelo ciclo de vida de uma solução de dados, começando com uma análise preditiva profunda (Parte 1) e culminando na engenharia de um produto de dados robusto e interativo (Parte 2).
-            </p>
-            
-            <h4 style="margin-top: 25px;">Principais Aprendizados</h4>
-            <ul class="list-with-bars" data-color="#6f42c1"> <li>
-                    <strong>A Diferença Crucial entre Análise e Produção:</strong> o maior aprendizado foi que um modelo com alta acurácia estatística não é, necessariamente, um bom produto. Um modelo de produção exige robustez, coerência com a lógica de negócio e "grades de proteção", como a arquitetura híbrida implementada.
-                </li>
-                <li>
-                    <strong>O Poder da Arquitetura Híbrida:</strong> a combinação de um Scorecard de Regras (para segurança e transparência nos casos extremos) com Machine Learning (para nuance nos casos complexos) provou ser uma solução eficaz para criar um sistema confiável e inteligente.
-                </li>
-                <li>
-                    <strong>A Necessidade de Testes de Sanidade:</strong> ficou evidente que a validação de um modelo vai além das métricas. A criação de uma suíte de testes com perfis arquetípicos para validar o "bom senso" do sistema é uma etapa indispensável no desenvolvimento de produtos de IA.
-                </li>
-            </ul>
-
-            <h4 style="margin-top: 30px;">Próximos Passos e Melhorias Futuras</h4>
+            <div class="summary-card-content">
              <p>
-                Esta calculadora é um ponto de partida com potencial de evolução. Algumas das próximas etapas lógicas seriam:
-            </p>
-            <ul class="list-with-bars" data-color="#007bff"> 
-                <li>
-                    <strong>Testes A/B:</strong> com a aplicação online, seria possível rodar testes A/B para otimizar a arquitetura. Por exemplo, testar uma versão com a "zona cinzenta" do ML ligeiramente mais ampla (ex: 350-700) contra a atual (400-650) para medir o impacto na taxa de aprovação versus o risco.
-                </li>
-                <li>
-                    <strong>Monitoramento do Modelo:</strong> implementar um sistema para monitorar a performance do modelo em produção e detectar "model drift" (quando os padrões dos dados mudam com o tempo), garantindo que o modelo continue preciso a longo prazo.
-                </li>
-            </ul>
-            
-            <hr>
-            <p class="text-center" style="margin-top: 20px;">
-                <strong>Este projeto serviu como uma jornada de aprendizado completa, que me proporcionou o desenvolvimento de habilidades técnicas em Machine Learning, desenvolvimento web e também a visão estratégica necessária para transformar dados em soluções de valor.</strong>
-            </p>
-
+              O modelo simplificado, embora estatisticamente aceitável, apresentou
+              <strong>
+               falhas lógicas graves
+              </strong>
+              em testes de sanidade, gerando previsões inconsistentes para perfis extremos.
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-4 col-sm-6 summary-card-wrapper">
+           <div class="summary-card-item">
+            <div class="summary-card-header">
+             <i class="fas fa-shield-alt summary-card-icon" style="color: #28a745;">
+             </i>
+             <h5 class="summary-card-title">
+              A Solução
+             </h5>
+            </div>
+            <div class="summary-card-content">
+             <p>
+              Foi projetada uma
+              <strong>
+               arquitetura híbrida
+              </strong>
+              , combinando um
+              <strong>
+               Scorecard de Regras de Negócio
+              </strong>
+              (para casos óbvios) com o
+              <strong>
+               modelo de Machine Learning
+              </strong>
+              (para a "zona cinzenta").
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-6 col-sm-6 summary-card-wrapper">
+           <div class="summary-card-item">
+            <div class="summary-card-header">
+             <i class="fas fa-vial summary-card-icon" style="color: #ffc107;">
+             </i>
+             <h5 class="summary-card-title">
+              Validação
+             </h5>
+            </div>
+            <div class="summary-card-content">
+             <p>
+              O sistema híbrido foi validado com os mesmos testes de sanidade, provando ser
+              <strong>
+               100% eficaz
+              </strong>
+              em corrigir as inconsistências lógicas do modelo simplificado.
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-6 col-sm-6 summary-card-wrapper">
+           <div class="summary-card-item">
+            <div class="summary-card-header">
+             <i class="fas fa-lightbulb summary-card-icon" style="color: #17a2b8;">
+             </i>
+             <h5 class="summary-card-title">
+              Considerações Finais
+             </h5>
+            </div>
+            <div class="summary-card-content">
+             <p>
+              O projeto demonstrou a importância de unir a ciência de dados com a engenharia de software para criar
+              <strong>
+               produtos de dados robustos
+              </strong>
+              , confiáveis e prontos para o mundo real.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
         </div>
-        
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingSimplificacao" role="tab">
+        <h4 class="panel-title">
+         <a aria-controls="collapseSimplificacao" aria-expanded="false" data-toggle="collapse" href="#collapseSimplificacao" role="button">
+          O Desafio da Simplificação
+         </a>
+        </h4>
+       </div>
+       <div aria-labelledby="headingSimplificacao" class="panel-collapse collapse" id="collapseSimplificacao" role="tabpanel">
+        <div class="panel-body">
+         <p>
+          O modelo analítico da Parte 1, apesar de sua alta performance (AUC 0.77+), foi construído em um ambiente de laboratório com acesso a um vasto histórico de dados do cliente, com mais de 230 variáveis. O desafio prático surgiu ao tentar traduzir essa análise para o simulador web interativo, que precisa dar uma resposta em tempo real para um
+          <strong>
+           novo cliente
+          </strong>
+          .
+         </p>
+         <p>
+          Isso criou uma lacuna de dados, pois o modelo analítico dependia de informações que não estão disponíveis no momento do preenchimento.
+         </p>
+         <h5 style="margin-top: 25px; font-weight: bold;">
+          Principais Impedimentos do Modelo Complexo:
+         </h5>
+         <ul class="list-with-bars" data-color="#fd7e14">
+          <li>
+           <strong>
+            Dependência de Dados Externos:
+           </strong>
+           as features mais importantes do modelo, como
+           <code>
+            EXT_SOURCE_2
+           </code>
+           e
+           <code>
+            EXT_SOURCE_3
+           </code>
+           , são scores de crédito externos que não existem para um novo solicitante.
+          </li>
+          <li>
+           <strong>
+            Histórico Inexistente:
+           </strong>
+           muitas das features mais preditivas foram criadas a partir da agregação do histórico de pagamentos e empréstimos anteriores do cliente, informações que, por definição, um novo cliente não possui.
+          </li>
+          <li>
+           <strong>
+            Latência e Custo Computacional:
+           </strong>
+           um modelo com mais de 230 features, que exige a consulta e agregação de 8 tabelas, é muito lento e caro para operar em tempo real em uma aplicação web.
+          </li>
+         </ul>
+         <h4 style="margin-top: 30px;">
+          A Decisão Estratégica
+         </h4>
+         <p>
+          Ficou claro que era necessário construir um novo modelo,
+          <strong>
+           muito mais simples
+          </strong>
+          , treinado para operar sob as restrições do mundo real. Este novo modelo seria treinado utilizando exclusivamente as
+          <strong>
+           14 variáveis
+          </strong>
+          , presentes na calculadora, que um cliente pode fornecer através do formulário.
+         </p>
+         <p>
+          Com essas premissas, um novo modelo LightGBM foi treinado. Esse novo modelo era menos performático (AUC ~0.68), mas era uma solução viável para o simulador web. Além disso, o modelo simplificado apresentou novos problemas que trataremos a seguir.
+         </p>
         </div>
-                    
-                </div>
-                <div class="row" style="margin-top: 50px; text-align: center;">
-                    <div class="col-md-12">
-                        <h3>Gostou do que viu?</h3>
-                        <p>A análise completa, com todo o código Python, o notebook e os arquivos de dados, está disponível no meu GitHub.</p>
-                        <a href="URL_DO_SEU_GITHUB_AQUI" target="_blank" class="btn btn-primary btn-lg">
-                            <i class="fab fa-github"></i> Ver Código no GitHub
-                        </a>
-                    </div>
-                </div>
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingDiagnostico" role="tab">
+        <h4 class="panel-title">
+         <a aria-controls="collapseDiagnostico" aria-expanded="false" data-toggle="collapse" href="#collapseDiagnostico" role="button">
+          Diagnóstico de Falhas do Modelo Simplificado
+         </a>
+        </h4>
+       </div>
+       <div aria-labelledby="headingDiagnostico" class="panel-collapse collapse" id="collapseDiagnostico" role="tabpanel">
+        <div class="panel-body">
+         <p>
+          Após treinar um modelo de Machine Learning usando apenas as 14 variáveis disponíveis no formulário, o primeiro passo foi avaliar sua performance. As métricas estatísticas, como a
+          <strong>
+           AUC de 0.68
+          </strong>
+          , indicavam um modelo razoável.
+         </p>
+         <p>
+          No entanto, a verdadeira prova de um modelo destinado a uma aplicação real não está apenas em suas métricas, mas em seu comportamento em cenários práticos e, por vezes, extremos. Para validar a coerência e o "bom senso" do modelo, foram criados diversos perfis de teste simulando clientes com características muito específicas (como rendas muito altas, endividamento extremo, etc.).
+         </p>
+         <p>
+          Foi durante essa fase de testes de sanidade que
+          <strong>
+           falhas lógicas graves foram descobertas
+          </strong>
+          . O modelo, por ser uma "caixa-preta" focada em padrões estatísticos, não conseguia aplicar regras de negócio óbvias, resultando em previsões inconsistentes e, em alguns casos, absurdas. Ficou claro que, para um produto de dados confiável, um modelo de Machine Learning puro não seria suficiente.
+         </p>
+         <p>
+          O carrossel abaixo demonstra, com exemplos práticos, algumas das inconsistências mais críticas encontradas, comparando o comportamento ilógico do modelo simplificado com a resposta correta do sistema híbrido final.
+         </p>
+         <br/>
+         <div class="carousel slide diagnostico-carousel" data-interval="false" data-ride="carousel" id="diagnosticoCarousel">
+          <ol class="carousel-indicators">
+           <li class="active" data-slide-to="0" data-target="#diagnosticoCarousel">
+           </li>
+           <li data-slide-to="1" data-target="#diagnosticoCarousel">
+           </li>
+           <li data-slide-to="2" data-target="#diagnosticoCarousel">
+           </li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+           <div class="item active">
+            <div class="text-center" style="margin-bottom: 20px;">
+             <h4>
+              Caso 1: Perfil de Baixíssimo Risco (Milionário)
+             </h4>
+             <p>
+              Simulação de um cliente com renda altíssima solicitando um empréstimo de valor irrisório.
+             </p>
+            </div>
+            <div class="row">
+             <div class="col-sm-6 text-center">
+              <h5>
+               Antes: Modelo Simplificado (ML Puro)
+              </h5>
+              <figure>
+               <img alt="Resultado inconsistente" class="img-responsive img-rounded" src="images/antes_irrisorio.png" style="border: 1px solid #ddd;"/>
+               <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;">
+                <em>
+                 Resultado: score mediano. Nesse caso, o mais lógico seria conceder crédito imediatamente, dada a renda do cliente em comparaçao ao valor ínfimo das parcelas e do empréstimo.
+                </em>
+               </figcaption>
+              </figure>
+             </div>
+             <div class="col-sm-6 text-center">
+              <h5>
+               Depois: Sistema Híbrido
+              </h5>
+              <figure>
+               <img alt="Resultado correto" class="img-responsive img-rounded" src="images/depois_irrisorio.png" style="border: 1px solid #ddd;"/>
+               <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;">
+                <em>
+                 Resultado correto: score altíssimo. Após a implementação da arquitetura híbrida, o resultado do score ficou coerente.
+                </em>
+               </figcaption>
+              </figure>
+             </div>
+            </div>
+           </div>
+           <div class="item">
+            <div class="text-center" style="margin-bottom: 20px;">
+             <h4>
+              Caso 2: Perfil de Alto Risco (Superendividado)
+             </h4>
+             <p>
+              Simulação de um cliente cuja parcela do empréstimo compromete 75% de sua renda mensal.
+             </p>
+            </div>
+            <div class="row">
+             <div class="col-sm-6 text-center">
+              <h5>
+               Antes: Modelo Simplificado (ML Puro)
+              </h5>
+              <figure>
+               <img alt="Resultado inconsistente" class="img-responsive img-rounded" src="images/antes_endividado.png" style="border: 1px solid #ddd;"/>
+               <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;">
+                <em>
+                 Resultado ilógico: nesse caso, um cliente cuja renda ficasse comprometida em 75% por conta do empréstimo, jamais deveria receber um score tão alto.
+                </em>
+               </figcaption>
+              </figure>
+             </div>
+             <div class="col-sm-6 text-center">
+              <h5>
+               Depois: Sistema Híbrido
+              </h5>
+              <figure>
+               <img alt="Resultado correto" class="img-responsive img-rounded" src="images/depois_endividado.png" style="border: 1px solid #ddd;"/>
+               <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;">
+                <em>
+                 Resultado correto: após a implementação da arquitetura híbrida, foi estabelecido que, caso as parcelas comprometessem a renda do cliente em mais de 60%, seu score seria baixo, para evitar riscos.
+                </em>
+               </figcaption>
+              </figure>
+             </div>
+            </div>
+           </div>
+           <div class="item">
+            <div class="text-center" style="margin-bottom: 20px;">
+             <h4>
+              Caso 3: Perfil Seguro
+             </h4>
+             <p>
+              Simulação de um cliente com um perfil seguro.
+             </p>
+            </div>
+            <div class="row">
+             <div class="col-sm-6 text-center">
+              <h5>
+               Antes: Modelo Simplificado (ML Puro)
+              </h5>
+              <figure>
+               <img alt="Resultado inconsistente" class="img-responsive img-rounded" src="images/antes_seguro.png" style="border: 1px solid #ddd;"/>
+               <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;">
+                <em>
+                 Resultado ilógico: o perfil desse cliente pode ser visto como seguro, pois além das parcelas não comprometerem grande parte da renda, suas características socioeconômicas passam certa "segurança".
+                </em>
+               </figcaption>
+              </figure>
+             </div>
+             <div class="col-sm-6 text-center">
+              <h5>
+               Depois: Sistema Híbrido
+              </h5>
+              <figure>
+               <img alt="Resultado correto" class="img-responsive img-rounded" src="images/depois_seguro2.png" style="border: 1px solid #ddd;"/>
+               <figcaption style="margin-top: 10px; font-size: 0.9em; color: #777;">
+                <em>
+                 Resultado correto: o perfil desse cliente não apresenta alto risco.
+                </em>
+               </figcaption>
+              </figure>
+             </div>
+            </div>
+           </div>
+          </div>
+          <a class="left carousel-control" data-slide="prev" href="#diagnosticoCarousel" role="button">
+           <i class="fas fa-chevron-left">
+           </i>
+           <span class="sr-only">
+            Previous
+           </span>
+          </a>
+          <a class="right carousel-control" data-slide="next" href="#diagnosticoCarousel" role="button">
+           <i class="fas fa-chevron-right">
+           </i>
+           <span class="sr-only">
+            Next
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingSolucao" role="tab">
+        <h4 class="panel-title">
+         <a aria-controls="collapseSolucao" aria-expanded="false" data-toggle="collapse" href="#collapseSolucao" role="button">
+          A Solução: Arquitetura Híbrida (Regras + Machine Learning)
+         </a>
+        </h4>
+       </div>
+       <div aria-labelledby="headingSolucao" class="panel-collapse collapse" id="collapseSolucao" role="tabpanel">
+        <div class="panel-body">
+         <p>
+          Diante das falhas lógicas do modelo simplificado, a solução foi projetar uma
+          <strong>
+           arquitetura de decisão em duas camadas
+          </strong>
+          , que combina regras de negócio com o poder preditivo do Machine Learning.
+         </p>
+         <h4 style="margin-top: 25px;">
+          Fluxo de Decisão do Sistema Híbrido
+         </h4>
+         <div class="flowchart-detailed" style="margin-top: 20px;">
+          <div class="step">
+           1. [Entrada de Dados do Cliente]
+          </div>
+          <div class="arrow">
+           ↓
+          </div>
+          <div class="scorecard-details">
+           <h5>
+            Camada 1: Scorecard de Regras
+           </h5>
+           <strong>
+            Score Inicial = 500
+           </strong>
+           <ul>
+            <li class="penalty">
+             -400 pts se Parcela/Renda &gt; 60%
+            </li>
+            <li class="penalty">
+             -150 pts se Idade &lt; 22 anos
+            </li>
+            <li class="bonus">
+             +300 pts se Crédito &lt;= R$ 1.000
+            </li>
+           </ul>
+          </div>
+          <div class="arrow">
+           ↓
+          </div>
+          <div class="step decision-box">
+           2. Score de Regras está nas Zonas de Veto?
+          </div>
+          <div class="row">
+           <div class="col-xs-6 text-center">
+            <div class="path-label text-danger">
+             ↳ SIM (Score &lt; 400 ou &gt; 650)
+            </div>
+            <div class="arrow">
+             ↓
+            </div>
+            <div class="step">
+             3a.
+             <strong>
+              Camada 1:
+             </strong>
+             traduz o score de regras em uma
+             <strong>
+              probabilidade final
+             </strong>
+             .
+            </div>
+           </div>
+           <div class="col-xs-6 text-center">
+            <div class="path-label text-success">
+             ↳ NÃO (Zona Cinzenta)
+            </div>
+            <div class="arrow">
+             ↓
+            </div>
+            <div class="step">
+             3b.
+             <strong>
+              Camada 2: modelo ML
+             </strong>
+             calcula a probabilidade.
+            </div>
+           </div>
+          </div>
+          <div class="arrow">
+           ↓
+          </div>
+          <div class="result-box">
+           4. Converte a
+           <strong>
+            probabilidade final
+           </strong>
+           em um Score (100-1000)
+          </div>
+         </div>
+         <h4 style="margin-top: 30px;">
+          Detalhes das Camadas
+         </h4>
+         <ul class="list-with-bars" data-color="#28a745">
+          <li>
+           <strong>
+            Camada 1: O Scorecard de Veto:
+           </strong>
+           um sistema de pontos que analisa regras de negócio. Se o score final cai em uma "zona de veto", a decisão é tomada imediatamente.
+          </li>
+          <li>
+           <strong>
+            Camada 2: O Modelo de ML na "Zona Cinzenta":
+           </strong>
+           apenas os perfis que não são "preto no branco" são passados para o modelo LightGBM, que usa sua força para analisar as interações sutis entre as variáveis em cenários complexos.
+          </li>
+         </ul>
+         <hr/>
+         <h4 style="margin-top: 30px;">
+          A Lógica por Trás das Fórmulas e Limites
+         </h4>
+         <p>
+          Os valores numéricos do sistema (limites, pesos e fórmulas) não foram gerados pelo modelo de ML, mas sim definidos manualmente. Para criar as fórmulas, combinei os insights da minha própria análise de dados e utilizei uma IA como ferramenta de apoio para refinar e calibrar os valores finais, inserindo lógicas de negócio consistentes com o mercado e, por fim, realizei testes de sanidade para determinar se os resultados estavam satisfatórios e coerentes.
+         </p>
+         <ul class="list-with-bars" data-color="#6f42c1">
+          <li>
+           <strong>
+            As Zonas de Veto (&lt; 400 e &gt; 650):
+           </strong>
+           foram calibradas para serem conservadoras. Os pesos das regras (ex:
+           <strong>
+            -400
+           </strong>
+           para renda comprometida) foram definidos para garantir que perfis de teste extremos (como o "superendividado") fossem sempre capturados por essa camada de segurança.
+          </li>
+          <li>
+           <strong>
+            Fórmula para Risco Alto (Score &lt; 400):
+           </strong>
+           a fórmula
+           <code>
+            prob = 0.75 + (400 - score) / 1000.0
+           </code>
+           foi criada para estabelecer uma base de
+           <strong>
+            75% de risco
+           </strong>
+           , que aumenta progressivamente quanto pior for o score de regras. Isso garante que a recusa seja sempre decisiva.
+          </li>
+          <li>
+           <strong>
+            Fórmula para Risco Baixo (Score &gt; 650):
+           </strong>
+           da mesma forma, a fórmula
+           <code>
+            prob = 0.10 - (score - 650) / 1000.0
+           </code>
+           estabelece uma base de apenas
+           <strong>
+            10% de risco
+           </strong>
+           , que diminui ainda mais quanto melhor for o perfil. Isso garante uma pré-aprovação com alta confiança.
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingValidacao" role="tab">
+        <h4 class="panel-title">
+         <a aria-controls="collapseValidacao" aria-expanded="false" data-toggle="collapse" href="#collapseValidacao" role="button">
+          Validação e Testes de Coerência
+         </a>
+        </h4>
+       </div>
+       <div aria-labelledby="headingValidacao" class="panel-collapse collapse" id="collapseValidacao" role="tabpanel">
+        <div class="panel-body">
+         <p>
+          Após o desenvolvimento da arquitetura híbrida, foi crucial conduzir uma fase de validação para garantir que as falhas de coerência haviam sido eliminadas de forma definitiva. O objetivo não era apenas corrigir os exemplos específicos, mas garantir a robustez geral do sistema.
+         </p>
+         <h4 style="margin-top: 25px;">
+          Metodologia de Testes
+         </h4>
+         <p>
+          Foi criada uma suíte de testes de sanidade composta por diversos "perfis arquetípicos". Cada perfil foi desenhado para testar um limite específico da lógica de negócio, simulando cenários extremos que o modelo simplificado não conseguiu tratar corretamente. A performance do sistema híbrido foi então comparada com a do modelo ML puro para cada caso.
+         </p>
+         <h4 style="margin-top: 30px;">
+          Conclusão da Validação
+         </h4>
+         <p>
+          A suíte de testes confirmou que
+          <strong>
+           a arquitetura híbrida foi eficaz em resolver as falhas de coerência
+          </strong>
+          do modelo simplificado. O sistema final demonstrou ser não apenas preditivo para os casos complexos, mas também seguro, robusto e alinhado com a lógica de negócio para os casos extremos.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingConsideracoes" role="tab">
+        <h4 class="panel-title">
+         <a aria-controls="collapseConsideracoes" aria-expanded="false" data-toggle="collapse" href="#collapseConsideracoes" role="button">
+          Considerações Finais e Próximos Passos
+         </a>
+        </h4>
+       </div>
+       <div aria-labelledby="headingConsideracoes" class="panel-collapse collapse" id="collapseConsideracoes" role="tabpanel">
+        <div class="panel-body">
+         <p>
+          Este projeto representou uma jornada completa pelo ciclo de vida de uma solução de dados, começando com uma análise preditiva profunda (Parte 1) e culminando na engenharia de um produto de dados robusto e interativo (Parte 2).
+         </p>
+         <h4 style="margin-top: 25px;">
+          Principais Aprendizados
+         </h4>
+         <ul class="list-with-bars" data-color="#6f42c1">
+          <li>
+           <strong>
+            A Diferença Crucial entre Análise e Produção:
+           </strong>
+           o maior aprendizado foi que um modelo com alta acurácia estatística não é, necessariamente, um bom produto. Um modelo de produção exige robustez, coerência com a lógica de negócio e "grades de proteção", como a arquitetura híbrida implementada.
+          </li>
+          <li>
+           <strong>
+            O Poder da Arquitetura Híbrida:
+           </strong>
+           a combinação de um Scorecard de Regras (para segurança e transparência nos casos extremos) com Machine Learning (para nuance nos casos complexos) provou ser uma solução eficaz para criar um sistema confiável e inteligente.
+          </li>
+          <li>
+           <strong>
+            A Necessidade de Testes de Sanidade:
+           </strong>
+           ficou evidente que a validação de um modelo vai além das métricas. A criação de uma suíte de testes com perfis arquetípicos para validar o "bom senso" do sistema é uma etapa indispensável no desenvolvimento de produtos de IA.
+          </li>
+         </ul>
+         <h4 style="margin-top: 30px;">
+          Próximos Passos e Melhorias Futuras
+         </h4>
+         <p>
+          Esta calculadora é um ponto de partida com potencial de evolução. Algumas das próximas etapas lógicas seriam:
+         </p>
+         <ul class="list-with-bars" data-color="#007bff">
+          <li>
+           <strong>
+            Testes A/B:
+           </strong>
+           com a aplicação online, seria possível rodar testes A/B para otimizar a arquitetura. Por exemplo, testar uma versão com a "zona cinzenta" do ML ligeiramente mais ampla (ex: 350-700) contra a atual (400-650) para medir o impacto na taxa de aprovação versus o risco.
+          </li>
+          <li>
+           <strong>
+            Monitoramento do Modelo:
+           </strong>
+           implementar um sistema para monitorar a performance do modelo em produção e detectar "model drift" (quando os padrões dos dados mudam com o tempo), garantindo que o modelo continue preciso a longo prazo.
+          </li>
+         </ul>
+         <hr/>
+         <p class="text-center" style="margin-top: 20px;">
+          <strong>
+           Este projeto serviu como uma jornada de aprendizado completa, que me proporcionou o desenvolvimento de habilidades técnicas em Machine Learning, desenvolvimento web e também a visão estratégica necessária para transformar dados em soluções de valor.
+          </strong>
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="row" style="margin-top: 50px; text-align: center;">
+       <div class="col-md-12">
+        <h3>
+         Gostou do que viu?
+        </h3>
+        <p>
+         A análise completa, com todo o código Python, o notebook e os arquivos de dados, está disponível no meu GitHub.
+        </p>
+        <a class="btn btn-primary btn-lg" href="URL_DO_SEU_GITHUB_AQUI" target="_blank">
+         <i class="fab fa-github">
+         </i>
+         Ver Código no GitHub
+        </a>
+       </div>
+      </div>
+     </div>
     </div>
-</div>
-			</div>
-		</div>
-	</div><div class="container-wrap">
-			<footer id="fh5co-footer" role="contentinfo">
-				<div class="row">
-
-					<div class="col-md-3">
-						<h4>Contato</h4>
-						<ul class="fh5co-footer-links">
-							<li><a href="mailto:info@yoursite.com">gloriaxgz@hotmail.com</a></li>
-						</ul>
-					</div>
-
-				</div>
-
-				<div class="row copyright">
-					<div class="col-md-12 text-center">
-						<p>
-							<ul class="fh5co-social-icons">
-								<li><a href="#"><i class="icon-linkedin"></i></a></li>
-								<li><a href="#"><i class="fab fa-github"></i></a></li>
-							</ul>
-						</p>
-					</div>
-				</div>
-			</footer>
-		</div></div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
-	</div>
-	
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.flexslider-min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<script src="js/jquery.countTo.js"></script>
-	<script src="js/main.js"></script>
-
-	<script>
-        document.addEventListener('DOMContentLoaded', function() {
+   </div>
+  </div>
+  <div class="container-wrap">
+   <footer id="gx-footer" role="contentinfo">
+    <div class="row">
+     <div class="col-md-3">
+      <h4>
+       Contato
+      </h4>
+      <ul class="gx-footer-links">
+       <li>
+        <a href="mailto:info@yoursite.com">
+         gloriaxgz@hotmail.com
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="row copyright">
+     <div class="col-md-12 text-center">
+      <p>
+       <ul class="gx-social-icons">
+        <li>
+         <a href="#">
+          <i class="icon-linkedin">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          <i class="fab fa-github">
+          </i>
+         </a>
+        </li>
+       </ul>
+      </p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <div class="gototop js-top">
+   <a class="js-gotop" href="#">
+    <i class="icon-arrow-up2">
+    </i>
+   </a>
+  </div>
+  <script src="js/jquery.min.js">
+  </script>
+  <script src="js/jquery.easing.1.3.js">
+  </script>
+  <script src="js/bootstrap.min.js">
+  </script>
+  <script src="js/jquery.waypoints.min.js">
+  </script>
+  <script src="js/jquery.flexslider-min.js">
+  </script>
+  <script src="js/jquery.magnific-popup.min.js">
+  </script>
+  <script src="js/magnific-popup-options.js">
+  </script>
+  <script src="js/jquery.countTo.js">
+  </script>
+  <script src="js/main.js">
+  </script>
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
             // --- 1. CAPTURA DE ELEMENTOS ---
             const form = document.getElementById('credit-form');
             const resultadoDiv = document.getElementById('resultado-analise');
@@ -1333,9 +2264,9 @@ model.fit(
                 });
             });
         });
-    </script>
-    <script>
-		$(document).ready(function(){
+  </script>
+  <script>
+   $(document).ready(function(){
 			// Escuta o evento 'shown.bs.collapse', que é disparado pelo Bootstrap
 			// quando um painel de acordeão TERMINA de abrir.
 			$('.panel-collapse').on('shown.bs.collapse', function () {
@@ -1351,6 +2282,6 @@ model.fit(
 				}, 800);
 			});
 		});
-</script>
-</body>
+  </script>
+ </body>
 </html>
